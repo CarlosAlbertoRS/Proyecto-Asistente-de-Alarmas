@@ -19,7 +19,7 @@
             android:name=".DesEstricto"
             android:exported="false" />
         <activity
-            android:name=".emergencia"
+            android:name=".logo"
             android:exported="false" />
         <activity
             android:name=".plantilla2"
