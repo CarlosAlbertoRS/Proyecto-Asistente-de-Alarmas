@@ -6,46 +6,47 @@
     android:layout_height="match_parent"
     tools:context=".MenuRegistro">
 
-    <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="155dp"
-        android:layout_height="149dp"
-        android:layout_marginTop="68dp"
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="351dp"
+        android:layout_height="148dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView17"
-        app:srcCompat="@android:drawable/ic_lock_idle_alarm" />
+        tools:layout_editor_absoluteY="467dp" />
 
-    <TextView
-        android:id="@+id/textView17"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="52dp"
-        android:text="Nombre Medicamento"
-        android:textSize="20sp"
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="351dp"
+        android:layout_height="148dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/textView18"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="80dp"
-        android:text="Hora de tomar tu medicamento"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView3" />
+        tools:layout_editor_absoluteY="283dp" />
 
     <Button
-        android:id="@+id/button11"
+        android:id="@+id/button12"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:text="Aceptar"
+        android:text="<--"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="31dp"
+        tools:layout_editor_absoluteY="39dp" />
+
+    <TextView
+        android:id="@+id/textView16"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Registros Totales"
+        android:textSize="34sp"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="128dp"
+        tools:layout_editor_absoluteY="42dp" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="351dp"
+        android:layout_height="148dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView18" />
+        tools:layout_editor_absoluteY="105dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>
