@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "663870637264",
+    "firebase_url": "https://asyst-a4d72-default-rtdb.firebaseio.com",
+    "project_id": "asyst-a4d72",
+    "storage_bucket": "asyst-a4d72.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:663870637264:android:ea0e3f861324313fe98ad5",
+        "android_client_info": {
+          "package_name": "com.example.proyasyst_test"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCRi1CtGVPbBTvtv6Rpoa_tMnBy1chcTaM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -7,7 +7,7 @@
     tools:context=".MainActivity">
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/btnBaseDatos"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Pagina de testing"
@@ -30,15 +30,16 @@
         app:cornerRadius="1.2dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintTop_toBottomOf="@+id/btnBaseDatos" />
 
     <Button
         android:id="@+id/button2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Button"
-        tools:layout_editor_absoluteX="161dp"
-        tools:layout_editor_absoluteY="154dp"
-        tools:ignore="MissingConstraints" />
+        android:text="base de datos"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteY="154dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
