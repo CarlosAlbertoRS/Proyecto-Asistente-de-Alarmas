@@ -16,6 +16,14 @@
             android:name=".emergencia"
             android:exported="false" />
         <activity
+            android:name=".plantilla2"
+            android:exported="false" />
+        <activity
+            android:name=".Pantalla4"
+            android:exported="false"
+            android:label="@string/title_activity_pantalla4"
+            android:theme="@style/Theme.ProyAsyst_test" />
+        <activity
             android:name=".testeo"
             android:exported="false" />
         <activity
