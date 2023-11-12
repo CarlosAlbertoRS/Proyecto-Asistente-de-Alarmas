@@ -26,8 +26,9 @@ class alarmaRecive: BroadcastReceiver() {
             .setPriority(NotificationCompat.PRIORITY_HIGH)
             .setContentIntent(pendingIntent)
 
+
+
         val notificationManager = NotificationManagerCompat.from(context)
         notificationManager.notify(123,builder.build())
-
     }
 }
