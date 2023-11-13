@@ -3,6 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM"/>
+    <uses-permission android:name="android.permission.VIBRATE" />
 
     <application
         android:allowBackup="true"
@@ -14,6 +16,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ProyAsyst_test"
         tools:targetApi="31">
+        <receiver android:name=".alarmaRecive"
+            android:enabled="true"/>
         <activity
             android:name=".DestinationActivity"
             android:exported="false" />
@@ -29,7 +33,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <receiver android:name=".alarmaRecive" />
+
     </application>
 
 </manifest>

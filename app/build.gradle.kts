@@ -7,6 +7,12 @@ android {
     namespace = "com.example.proyasyst_test"
     compileSdk = 33
 
+    dexOptions{
+        incremental = true
+        maxProcessCount = 4
+        javaMaxHeapSize = "2g"
+    }
+
     defaultConfig {
         applicationId = "com.example.proyasyst_test"
         minSdk = 24

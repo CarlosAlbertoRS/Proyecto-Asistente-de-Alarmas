@@ -8,6 +8,8 @@ import android.content.Intent
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.transition.Explode
+import android.transition.Fade
 import android.widget.Button
 import android.widget.Switch
 import android.widget.Toast
@@ -28,11 +30,13 @@ class testeo : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_testeo)
 
+
         var bt1 = findViewById<Button>(R.id.button)
         var bt2 = findViewById<Button>(R.id.Cancelar)
         var bt3 = findViewById<Button>(R.id.Seleccionar)
 
         var sw1 = findViewById<Switch>(R.id.sw_estado)
+
         createNotificationChannel()
         bt1.setOnClickListener {
             setAlarm()
@@ -44,6 +48,11 @@ class testeo : AppCompatActivity() {
             setPicker()
         }
 
+    }
+
+    override fun onBackPressed() {
+        super.onBackPressed()
+        overridePendingTransition(R.anim.fade_in,R.anim.fade_out)
     }
 
     private fun setPicker() {

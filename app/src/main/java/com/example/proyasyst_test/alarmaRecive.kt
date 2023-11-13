@@ -1,15 +1,22 @@
 package com.example.proyasyst_test
 
+import android.Manifest
 import android.annotation.SuppressLint
 import android.app.PendingIntent
 import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
+import android.content.pm.PackageManager
+import android.graphics.Bitmap
+import android.graphics.BitmapFactory
+import android.net.Uri
+import androidx.annotation.ColorInt
+import androidx.core.app.ActivityCompat
 import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
 
 class alarmaRecive: BroadcastReceiver() {
-    @SuppressLint("MissingPermission")
+
     override fun onReceive(context: Context?, intent: Intent?) {
 
         val i = Intent(context, DestinationActivity::class.java)
@@ -18,17 +25,30 @@ class alarmaRecive: BroadcastReceiver() {
             PendingIntent.FLAG_IMMUTABLE)
 
         val builder = NotificationCompat.Builder(context!!,"Asys-T")
-            .setSmallIcon(R.drawable.ic_launcher_background)
-            .setContentTitle("Alarma -> Asys-T")
-            .setContentText("Hola amiguito, es la hora de tomarte tus pastillas...")
+            .setSmallIcon(R.drawable.olla)
+            .setContentTitle("Alarma Activa !")
+            .setContentText("Hola, ya es hora de que se tome su medicación.")
             .setAutoCancel(true)
+            .setStyle(NotificationCompat.BigTextStyle().bigText("" +
+                          "\n   Se ha activado una alarma que indica que debes tomarte tus pastillas." +
+                        "\n\nTe invitamos a dar click aquí para desactivarla..." +
+                        "\n\n_________________________" +
+                    "\n>> AsysT - Team    (°<°) / "))
             .setDefaults(NotificationCompat.DEFAULT_ALL)
+            .setLights(1,500,500)
             .setPriority(NotificationCompat.PRIORITY_HIGH)
             .setContentIntent(pendingIntent)
 
-
-
         val notificationManager = NotificationManagerCompat.from(context)
-        notificationManager.notify(123,builder.build())
+        if (ActivityCompat.checkSelfPermission(
+                context,
+                Manifest.permission.POST_NOTIFICATIONS
+            ) != PackageManager.PERMISSION_GRANTED
+        ) {
+            return
+        }
+        notificationManager.notify(1,builder.build())
+
     }
+
 }
