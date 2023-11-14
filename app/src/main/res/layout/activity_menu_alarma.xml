@@ -6,6 +6,37 @@
     android:layout_height="match_parent"
     tools:context=".MenuAlarma">
 
+    <Button
+        android:id="@+id/button11"
+        android:layout_width="61dp"
+        android:layout_height="48dp"
+        android:backgroundTint="#635959"
+        android:foregroundTint="#635959"
+        android:text="D"
+        android:textSize="20sp"
+        tools:layout_editor_absoluteX="275dp"
+        tools:layout_editor_absoluteY="581dp" />
+
+    <TextView
+        android:id="@+id/textView22"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Quedan: "
+        android:textSize="16sp"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="88dp"
+        tools:layout_editor_absoluteY="537dp" />
+
+    <TextView
+        android:id="@+id/textView21"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="días"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="262dp"
+        tools:layout_editor_absoluteY="537dp" />
+
     <ImageView
         android:id="@+id/imageView2"
         android:layout_width="210dp"
@@ -14,98 +45,161 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/reloj" />
-
-    <EditText
-        android:id="@+id/editTextText3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="text"
-        android:textSize="12sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.481"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="455dp" />
-
-    <TextView
-        android:id="@+id/textView15"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Perido de tratamiento:"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.481"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="427dp" />
-
-    <EditText
-        android:id="@+id/editTextText4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="text"
-        android:textSize="12sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.481"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="351dp" />
-
-    <Button
-        android:id="@+id/button10"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="V"
-        android:textSize="20sp"
-        tools:layout_editor_absoluteX="43dp"
-        tools:layout_editor_absoluteY="554dp" />
-
-    <Button
-        android:id="@+id/button9"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="X"
-        android:textSize="20sp"
-        tools:layout_editor_absoluteX="172dp"
-        tools:layout_editor_absoluteY="554dp" />
-
-    <Button
-        android:id="@+id/button11"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="B"
-        android:textSize="20sp"
-        tools:layout_editor_absoluteX="292dp"
-        tools:layout_editor_absoluteY="554dp" />
-
-    <TextView
-        android:id="@+id/textView14"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text=" Horario activo: "
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.485"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="331dp" />
-
-    <EditText
-        android:id="@+id/editTextText2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="text"
-        android:textSize="12sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="260dp" />
+        app:srcCompat="@drawable/reloj2" />
 
     <TextView
         android:id="@+id/textView13"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Medicamento"
+        android:textSize="16sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="241dp" />
+        tools:layout_editor_absoluteY="225dp" />
+
+    <Button
+        android:id="@+id/button9"
+        android:layout_width="61dp"
+        android:layout_height="48dp"
+        android:backgroundTint="#F41E1E"
+        android:foregroundTint="#F41E1E"
+        android:text="X"
+        android:textSize="20sp"
+        tools:layout_editor_absoluteX="170dp"
+        tools:layout_editor_absoluteY="581dp" />
+
+    <Button
+        android:id="@+id/button10"
+        android:layout_width="59dp"
+        android:layout_height="46dp"
+        android:backgroundTint="#26D521"
+        android:foregroundTint="#26D521"
+        android:text="!"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="64dp"
+        tools:layout_editor_absoluteY="581dp" />
+
+    <EditText
+        android:id="@+id/editTextText2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:ems="10"
+        android:inputType="text"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView13" />
+
+    <EditText
+        android:id="@+id/editTextText3"
+        android:layout_width="77dp"
+        android:layout_height="34dp"
+        android:ems="10"
+        android:inputType="text"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.508"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="526dp" />
+
+    <TextView
+        android:id="@+id/textView15"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Perido de tratamiento:"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.488"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="499dp" />
+
+    <EditText
+        android:id="@+id/editTextText4"
+        android:layout_width="74dp"
+        android:layout_height="36dp"
+        android:ems="10"
+        android:inputType="text"
+        android:textSize="12sp"
+        tools:layout_editor_absoluteX="262dp"
+        tools:layout_editor_absoluteY="345dp" />
+
+    <TextView
+        android:id="@+id/textView18"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="a: "
+        android:textSize="16sp"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="224dp"
+        tools:layout_editor_absoluteY="353dp" />
+
+    <EditText
+        android:id="@+id/editTextText6"
+        android:layout_width="74dp"
+        android:layout_height="36dp"
+        android:ems="10"
+        android:inputType="text"
+        android:textSize="12sp"
+        tools:layout_editor_absoluteX="129dp"
+        tools:layout_editor_absoluteY="345dp" />
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="72dp"
+        android:layout_marginTop="352dp"
+        android:text="De: "
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView17"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="hrs."
+        android:textSize="16sp"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="257dp"
+        tools:layout_editor_absoluteY="427dp" />
+
+    <EditText
+        android:id="@+id/editTextText5"
+        android:layout_width="74dp"
+        android:layout_height="36dp"
+        android:ems="10"
+        android:inputType="text"
+        android:textSize="12sp"
+        tools:layout_editor_absoluteX="170dp"
+        tools:layout_editor_absoluteY="413dp" />
+
+    <TextView
+        android:id="@+id/textView20"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Cada: "
+        android:textSize="16sp"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="107dp"
+        tools:layout_editor_absoluteY="427dp" />
+
+    <TextView
+        android:id="@+id/textView14"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text=" Horario activo: "
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextText2" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
