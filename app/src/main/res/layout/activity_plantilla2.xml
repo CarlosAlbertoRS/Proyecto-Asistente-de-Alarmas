@@ -26,7 +26,8 @@
         android:text="¿Como te gustaaria que nos refirieramos a ti?"
         android:textSize="20sp"
         app:layout_constraintTop_toBottomOf="@+id/textView3"
-        tools:layout_editor_absoluteX="3dp" />
+        tools:layout_editor_absoluteX="3dp"
+        tools:ignore="MissingConstraints" />
 
     <EditText
         android:id="@+id/editTextText"
@@ -36,6 +37,7 @@
         android:ems="10"
         android:hint="Coloque nombre"
         android:inputType="text"
+        android:minHeight="48dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
@@ -48,7 +50,7 @@
         android:layout_marginTop="40dp"
         android:background="#4CAF50"
         android:text="Aceptar"
-        android:textColor="#4CAF50"
+        android:textColor="#3E2723"
         android:textColorHighlight="#4CAF50"
         android:textColorHint="#4CAF50"
         android:textColorLink="#4CAF50"
