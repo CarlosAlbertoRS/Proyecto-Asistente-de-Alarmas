@@ -13,6 +13,6 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "proyAsyst_test"
+rootProject.name = "Asyst-T"
 include(":app")
  

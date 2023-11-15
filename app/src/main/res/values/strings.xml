@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">proyAsyst_test</string>
+    <string name="app_name">Asyst-T</string>
     <string name="title_activity_pantalla4">Pantalla4</string>
     <!-- Strings used for fragments for navigation -->
     <string name="first_fragment_label">First Fragment</string>
