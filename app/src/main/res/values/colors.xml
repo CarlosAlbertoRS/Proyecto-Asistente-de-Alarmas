@@ -3,4 +3,16 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 
+    <!--On Boarding colors-->
+    <color name="Logo">#738491</color>
+    <color name="Letras">#758490</color>
+    <color name="Verde_BG">#C4DDD5</color>
+    <color name="Rojo_Error">#F77174</color>
+    <color name="Gris_Sombra">#E4DDDD</color>
+    <color name="Rojo_Bajito">#EA6357</color>
+    <color name="Azul_Iconos">#7ab2dd</color>
+    <color name="Verde_Aceptar">#4AB47F</color>
+    <color name="Amarillo_Abeja">#FCD86D</color>
+    <color name="Rojo_Letra_Error">#CC2424</color>
+
 </resources>
