@@ -28,7 +28,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:src="@tools:sample/avatars"
-            tools:srcCompat="@drawable/reloj2" />
+            tools:srcCompat="@drawable/reloj2"
+            android:contentDescription="TODO" />
 
         <Switch
             android:id="@+id/switch2"
