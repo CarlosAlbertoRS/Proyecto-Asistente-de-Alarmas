@@ -11,7 +11,7 @@ class menu_principal : AppCompatActivity() {
         setContentView(R.layout.activity_menu_principal)
 
         val btnAgregar = findViewById<ImageButton>(R.id.btnAgregar)
-        val btnRegistro = findViewById<ImageButton>(R.id.btnAgregar)
+        val btnRegistro = findViewById<ImageButton>(R.id.btnRegistro)
 
         btnAgregar.setOnClickListener {
             startActivity(Intent(this, agregar::class.java))
