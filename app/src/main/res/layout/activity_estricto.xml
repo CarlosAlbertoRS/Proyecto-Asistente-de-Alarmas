@@ -144,12 +144,12 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.507"
-        app:layout_constraintStart_toEndOf="@+id/imageButton6"
+        app:layout_constraintStart_toEndOf="@+id/btnAgregar"
         app:srcCompat="@drawable/cancelar"
         tools:ignore="MissingConstraints,SpeakableTextPresentCheck" />
 
     <ImageButton
-        android:id="@+id/imageButton6"
+        android:id="@+id/btnAgregar"
         android:layout_width="52dp"
         android:layout_height="54dp"
         android:layout_marginStart="104dp"
