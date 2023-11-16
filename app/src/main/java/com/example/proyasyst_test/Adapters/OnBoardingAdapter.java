@@ -79,4 +79,9 @@ public class OnBoardingAdapter extends PagerAdapter {
 
         return v;
     }
+
+    @Override
+    public void destroyItem(@NonNull ViewGroup container, int position, @NonNull Object object) {
+        container.removeView((ConstraintLayout) object);
+    }
 }
