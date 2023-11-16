@@ -41,8 +41,8 @@
         android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/editTextText6"
-        tools:layout_editor_absoluteY="404dp"
-        tools:ignore="MissingConstraints" />
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteY="404dp" />
 
     <ImageView
         android:id="@+id/imageView2"
@@ -58,60 +58,32 @@
         android:id="@+id/switch2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="36dp"
         android:minHeight="48dp"
         android:text="Modo Básico: "
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+        tools:layout_editor_absoluteY="213dp" />
 
     <TextView
         android:id="@+id/textView13"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
         android:text="Medicamento"
         android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/switch2" />
+        tools:layout_editor_absoluteY="277dp" />
 
-    <Button
-        android:id="@+id/button9"
-        android:layout_width="61dp"
-        android:layout_height="48dp"
-        android:backgroundTint="#F41E1E"
-        android:foregroundTint="#F41E1E"
-        android:text="X"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/button10"
-        tools:layout_editor_absoluteY="581dp"
-        tools:ignore="MissingConstraints" />
-
-    <Button
-        android:id="@+id/button10"
-        android:layout_width="76dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="108dp"
-        android:backgroundTint="#26D521"
-        android:foregroundTint="#26D521"
-        android:text="<--"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteY="584dp" />
 
     <EditText
         android:id="@+id/editTextText2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="3dp"
+        android:layout_marginTop="4dp"
         android:ems="10"
         android:inputType="text"
         android:minHeight="48dp"
@@ -145,8 +117,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.488"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="499dp"
-        tools:ignore="MissingConstraints" />
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteY="499dp" />
 
     <EditText
         android:id="@+id/editTextText4"
@@ -156,10 +128,10 @@
         android:inputType="text"
         android:textSize="12sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.707"
+        app:layout_constraintHorizontal_bias="0.145"
         app:layout_constraintStart_toEndOf="@+id/textView18"
         tools:ignore="MissingConstraints,SpeakableTextPresentCheck,TouchTargetSizeCheck"
-        tools:layout_editor_absoluteY="396dp" />
+        tools:layout_editor_absoluteY="397dp" />
 
     <TextView
         android:id="@+id/textView9"
@@ -170,8 +142,8 @@
         android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="404dp"
-        tools:ignore="MissingConstraints" />
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteY="404dp" />
 
     <EditText
         android:id="@+id/editTextText5"
@@ -195,8 +167,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.259"
         app:layout_constraintStart_toEndOf="@+id/editTextText5"
-        tools:layout_editor_absoluteY="463dp"
-        tools:ignore="MissingConstraints" />
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteY="463dp" />
 
     <TextView
         android:id="@+id/textView20"
@@ -205,9 +177,9 @@
         android:text="Cada: "
         android:textSize="16sp"
         android:textStyle="bold"
+        tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="111dp"
-        tools:layout_editor_absoluteY="463dp"
-        tools:ignore="MissingConstraints" />
+        tools:layout_editor_absoluteY="463dp" />
 
     <TextView
         android:id="@+id/textView14"
@@ -221,5 +193,23 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextText2" />
+
+    <ImageButton
+        android:id="@+id/imageButton4"
+        android:layout_width="52dp"
+        android:layout_height="54dp"
+        android:backgroundTint="#00FFFFFF"
+        app:srcCompat="@drawable/cancelar"
+        tools:layout_editor_absoluteX="259dp"
+        tools:layout_editor_absoluteY="578dp" />
+
+    <ImageButton
+        android:id="@+id/imageButton6"
+        android:layout_width="52dp"
+        android:layout_height="54dp"
+        android:backgroundTint="#00FFFFFF"
+        app:srcCompat="@drawable/edit2"
+        tools:layout_editor_absoluteX="103dp"
+        tools:layout_editor_absoluteY="579dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

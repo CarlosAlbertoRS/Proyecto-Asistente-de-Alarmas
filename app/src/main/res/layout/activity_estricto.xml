@@ -13,9 +13,9 @@
         android:text="días"
         android:textSize="16sp"
         android:textStyle="bold"
+        tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="255dp"
-        tools:layout_editor_absoluteY="541dp"
-        tools:ignore="MissingConstraints" />
+        tools:layout_editor_absoluteY="541dp" />
 
     <ImageView
         android:id="@+id/imageView2"
@@ -31,52 +31,21 @@
         android:id="@+id/switch2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="36dp"
         android:minHeight="48dp"
         android:text="Modo Básico: "
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+        tools:layout_editor_absoluteX="137dp"
+        tools:layout_editor_absoluteY="204dp" />
 
     <TextView
         android:id="@+id/textView13"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
         android:text="Medicamento"
         android:textSize="16sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/switch2" />
-
-    <Button
-        android:id="@+id/button9"
-        android:layout_width="61dp"
-        android:layout_height="48dp"
-        android:backgroundTint="#F41E1E"
-        android:foregroundTint="#F41E1E"
-        android:text="X"
-        android:textSize="20sp"
-        tools:layout_editor_absoluteX="255dp"
-        tools:layout_editor_absoluteY="581dp"
-        tools:ignore="MissingConstraints" />
-
-    <Button
-        android:id="@+id/button10"
-        android:layout_width="76dp"
-        android:layout_height="48dp"
-        android:backgroundTint="#26D521"
-        android:foregroundTint="#26D521"
-        android:text="<--"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="96dp"
-        tools:layout_editor_absoluteY="581dp" />
+        tools:layout_editor_absoluteX="155dp"
+        tools:layout_editor_absoluteY="268dp" />
 
     <EditText
         android:id="@+id/editTextText2"
@@ -116,8 +85,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.488"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="499dp"
-        tools:ignore="MissingConstraints" />
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteY="499dp" />
 
     <EditText
         android:id="@+id/editTextText5"
@@ -137,21 +106,35 @@
         android:text="hrs."
         android:textSize="16sp"
         android:textStyle="bold"
+        tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="234dp"
-        tools:layout_editor_absoluteY="439dp"
-        tools:ignore="MissingConstraints" />
+        tools:layout_editor_absoluteY="439dp" />
 
     <TextView
         android:id="@+id/textView14"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
         android:text="Intervalo entre dosis:"
         android:textSize="16sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.501"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextText2" />
+        tools:layout_editor_absoluteX="130dp"
+        tools:layout_editor_absoluteY="380dp" />
 
+    <ImageButton
+        android:id="@+id/imageButton4"
+        android:layout_width="52dp"
+        android:layout_height="54dp"
+        android:backgroundTint="#00FFFFFF"
+        app:srcCompat="@drawable/cancelar"
+        tools:layout_editor_absoluteX="259dp"
+        tools:layout_editor_absoluteY="578dp" />
+
+    <ImageButton
+        android:id="@+id/imageButton6"
+        android:layout_width="52dp"
+        android:layout_height="54dp"
+        android:backgroundTint="#00FFFFFF"
+        app:srcCompat="@drawable/edit2"
+        tools:layout_editor_absoluteX="103dp"
+        tools:layout_editor_absoluteY="579dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>
