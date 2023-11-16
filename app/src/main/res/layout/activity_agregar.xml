@@ -28,7 +28,6 @@
             android:id="@+id/imageView5"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:src="@tools:sample/avatars"
             tools:srcCompat="@drawable/reloj2" />
 
         <Switch
@@ -39,9 +38,7 @@
             android:minHeight="60dp"
             android:text="Modo Básico: "
             android:textSize="16sp"
-
             android:textStyle="bold"
-            app:layout_constraintTop_toBottomOf="@+id/imageView2"
             tools:ignore="MissingConstraints" />
 
         <TextView
