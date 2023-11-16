@@ -12,13 +12,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        var bt1 = this.findViewById<Button>(R.id.btn_test)
 
-        bt1.setOnClickListener {
-            var intent = Intent(this, testeo::class.java)
-            startActivity(intent)
-            overridePendingTransition(R.anim.fade_in,R.anim.fade_out)
-        }
 
     }
 }
