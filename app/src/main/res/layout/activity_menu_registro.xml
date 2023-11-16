@@ -11,19 +11,26 @@
         android:id="@+id/textView16"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="36dp"
         android:background="#FFFFFF"
         android:text="Registros Totales"
         android:textSize="34sp"
         android:textStyle="bold"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="107dp"
-        tools:layout_editor_absoluteY="31dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/imageButton8"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
 
     <ScrollView
         android:layout_width="369dp"
         android:layout_height="152dp"
         android:background="@color/white"
-        tools:layout_editor_absoluteX="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints,SpeakableTextPresentCheck"
         tools:layout_editor_absoluteY="123dp">
 
         <LinearLayout
@@ -36,7 +43,10 @@
         android:layout_width="369dp"
         android:layout_height="152dp"
         android:background="#FFFFFF"
-        tools:layout_editor_absoluteX="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints,SpeakableTextPresentCheck"
         tools:layout_editor_absoluteY="300dp">
 
         <LinearLayout
@@ -49,7 +59,10 @@
         android:layout_width="369dp"
         android:layout_height="152dp"
         android:background="#FFFFFF"
-        tools:layout_editor_absoluteX="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints,SpeakableTextPresentCheck"
         tools:layout_editor_absoluteY="477dp">
 
         <LinearLayout
@@ -62,9 +75,12 @@
         android:id="@+id/imageButton8"
         android:layout_width="52dp"
         android:layout_height="54dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="36dp"
         android:backgroundTint="#00FFFFFF"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/flecha"
-        tools:layout_editor_absoluteX="30dp"
-        tools:layout_editor_absoluteY="31dp" />
+        tools:ignore="SpeakableTextPresentCheck" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

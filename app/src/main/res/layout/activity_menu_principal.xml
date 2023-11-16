@@ -11,42 +11,56 @@
         android:id="@+id/imageView3"
         android:layout_width="419dp"
         android:layout_height="276dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/abeja"
-        tools:layout_editor_absoluteX="-4dp"
-        tools:layout_editor_absoluteY="16dp" />
+        android:contentDescription="TODO" />
 
     <ImageButton
         android:id="@+id/imageButton5"
         android:layout_width="54dp"
         android:layout_height="54dp"
+        android:layout_marginStart="76dp"
         android:backgroundTint="#00FFFFFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/imageButton6"
         app:srcCompat="@drawable/rad"
-        tools:layout_editor_absoluteX="318dp"
+        tools:ignore="MissingConstraints,SpeakableTextPresentCheck"
         tools:layout_editor_absoluteY="570dp" />
 
     <ImageButton
         android:id="@+id/imageButton6"
         android:layout_width="54dp"
         android:layout_height="54dp"
+        android:layout_marginStart="76dp"
         android:backgroundTint="#00FFFFFF"
+        app:layout_constraintStart_toEndOf="@+id/imageButton7"
         app:srcCompat="@drawable/mas"
-        tools:layout_editor_absoluteX="195dp"
+        tools:ignore="MissingConstraints,SpeakableTextPresentCheck"
         tools:layout_editor_absoluteY="570dp" />
 
     <ImageButton
         android:id="@+id/imageButton7"
         android:layout_width="54dp"
         android:layout_height="54dp"
+        android:layout_marginStart="64dp"
         android:backgroundTint="#00FFFFFF"
+        app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/cor"
-        tools:layout_editor_absoluteX="52dp"
+        tools:ignore="MissingConstraints,SpeakableTextPresentCheck"
         tools:layout_editor_absoluteY="570dp" />
 
     <ScrollView
         android:layout_width="372dp"
         android:layout_height="109dp"
         android:background="#FFFFFF"
-        tools:layout_editor_absoluteX="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints,SpeakableTextPresentCheck"
         tools:layout_editor_absoluteY="303dp">
 
         <LinearLayout
@@ -59,7 +73,10 @@
         android:layout_width="370dp"
         android:layout_height="110dp"
         android:background="#FFFFFF"
-        tools:layout_editor_absoluteX="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints,SpeakableTextPresentCheck"
         tools:layout_editor_absoluteY="431dp">
 
         <LinearLayout
