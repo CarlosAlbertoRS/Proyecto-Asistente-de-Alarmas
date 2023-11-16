@@ -5,7 +5,7 @@ plugins {
 
 android {
     namespace = "com.example.proyasyst_test"
-    compileSdk = 33
+    compileSdk = 34
 
     dexOptions{
         incremental = true
@@ -16,7 +16,7 @@ android {
     defaultConfig {
         applicationId = "com.example.proyasyst_test"
         minSdk = 24
-        targetSdk = 33
+        targetSdk = 34
         versionCode = 1
         versionName = "1.0"
 
