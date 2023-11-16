@@ -7,27 +7,17 @@
     android:background="#C3DCD4"
     tools:context=".MenuRegistro">
 
-    <Button
-        android:id="@+id/button12"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="<--"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        tools:layout_editor_absoluteX="31dp"
-        tools:layout_editor_absoluteY="39dp"
-        tools:ignore="MissingConstraints" />
-
     <TextView
         android:id="@+id/textView16"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:background="#FFFFFF"
         android:text="Registros Totales"
         android:textSize="34sp"
         android:textStyle="bold"
-        tools:layout_editor_absoluteX="128dp"
-        tools:layout_editor_absoluteY="42dp"
-        tools:ignore="MissingConstraints" />
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="107dp"
+        tools:layout_editor_absoluteY="31dp" />
 
     <ScrollView
         android:layout_width="369dp"
@@ -67,5 +57,14 @@
             android:layout_height="wrap_content"
             android:orientation="vertical" />
     </ScrollView>
+
+    <ImageButton
+        android:id="@+id/imageButton8"
+        android:layout_width="52dp"
+        android:layout_height="54dp"
+        android:backgroundTint="#00FFFFFF"
+        app:srcCompat="@drawable/flecha"
+        tools:layout_editor_absoluteX="30dp"
+        tools:layout_editor_absoluteY="31dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
