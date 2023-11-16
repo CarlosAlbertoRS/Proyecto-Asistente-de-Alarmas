@@ -25,7 +25,6 @@ class MainActivity : AppCompatActivity() {
         var adapter = OnBoardingAdapter2(this)
 
         Thread.sleep(5000)
-
         var intent = Intent(this, pg_MenuPrincipal::class.java)
         startActivity(intent)
         //viewPager.adapter = adapter

@@ -103,7 +103,7 @@ class testeo : AppCompatActivity() {
             //==================================================================================
             // Cada hora busca alarma ||             Dosis                ||    Separacion
             //==================================================================================
-            // Si cantidad = c=(24/n) => d=(Int)(24/n) pm                 => 1 cada n hr
+            // Si cantidad = c=(24/n) => d=(Int)(24/n) pm                 =>   1 cada n hr
             //==================================================================================
 
         }
@@ -124,14 +124,37 @@ class testeo : AppCompatActivity() {
         alarmManager = getSystemService(ALARM_SERVICE) as AlarmManager
         val intent = Intent(this,alarmaRecive::class.java)
 
-        pendingIntent = PendingIntent.getBroadcast(this,0,intent, PendingIntent.FLAG_IMMUTABLE)
+        pendingIntent = PendingIntent.getBroadcast(this,0,
+            intent, PendingIntent.FLAG_IMMUTABLE)
 
-        alarmManager.setRepeating(
+        if(alarmManager==null){
+
+
+            if(System.currentTimeMillis().toInt() !=0){}
+            val calendar: Calendar = Calendar.getInstance().apply {
+                timeInMillis = System.currentTimeMillis()
+                set(Calendar.HOUR_OF_DAY, 0)
+                set(Calendar.MINUTE, 0)
+            }
+
+            alarmManager?.setRepeating(
+                AlarmManager.RTC_WAKEUP,
+                calendar.timeInMillis,
+                1000 * 60 * 60,
+                pendingIntent)
+
+            Toast.makeText(this,"Ya creada",Toast.LENGTH_SHORT).show()
+
+        } else{
+            alarmManager.setRepeating(
             AlarmManager.RTC_WAKEUP,calendar.timeInMillis,
             AlarmManager.INTERVAL_DAY,pendingIntent
-        )
+            )
 
-        Toast.makeText(this,"Listo",Toast.LENGTH_SHORT).show()
+            Toast.makeText(this,"Listo",Toast.LENGTH_SHORT).show()
+        }
+
+        // Crear alarma a parrtir de la hora del usuario (ej. Si activa a las 8:15 poner a las 9)
 
     }
 
@@ -145,7 +168,6 @@ class testeo : AppCompatActivity() {
             val notificationManager = getSystemService(
                 NotificationManager::class.java
             )
-
             notificationManager.createNotificationChannel(channel)
         }
     }
