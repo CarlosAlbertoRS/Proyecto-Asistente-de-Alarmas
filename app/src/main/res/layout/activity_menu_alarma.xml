@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:scrollbarSize="4dp"
     tools:context=".MenuAlarma">
 
     <Button
@@ -14,9 +15,9 @@
         android:foregroundTint="#635959"
         android:text="D"
         android:textSize="20sp"
+        tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="275dp"
-        tools:layout_editor_absoluteY="581dp"
-        tools:ignore="MissingConstraints" />
+        tools:layout_editor_absoluteY="581dp" />
 
     <TextView
         android:id="@+id/textView22"
@@ -25,9 +26,9 @@
         android:text="Quedan: "
         android:textSize="16sp"
         android:textStyle="bold"
+        tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="88dp"
-        tools:layout_editor_absoluteY="537dp"
-        tools:ignore="MissingConstraints" />
+        tools:layout_editor_absoluteY="537dp" />
 
     <TextView
         android:id="@+id/textView21"
@@ -36,9 +37,9 @@
         android:text="días"
         android:textSize="16sp"
         android:textStyle="bold"
+        tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="262dp"
-        tools:layout_editor_absoluteY="537dp"
-        tools:ignore="MissingConstraints" />
+        tools:layout_editor_absoluteY="537dp" />
 
     <ImageView
         android:id="@+id/imageView2"
@@ -58,21 +59,10 @@
         android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.506"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="225dp"
-        tools:ignore="MissingConstraints" />
-
-    <Button
-        android:id="@+id/button9"
-        android:layout_width="61dp"
-        android:layout_height="48dp"
-        android:backgroundTint="#F41E1E"
-        android:foregroundTint="#F41E1E"
-        android:text="X"
-        android:textSize="20sp"
-        tools:layout_editor_absoluteX="170dp"
-        tools:layout_editor_absoluteY="581dp"
-        tools:ignore="MissingConstraints" />
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteY="225dp" />
 
     <Button
         android:id="@+id/button10"
@@ -123,8 +113,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.488"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="499dp"
-        tools:ignore="MissingConstraints" />
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteY="499dp" />
 
     <EditText
         android:id="@+id/editTextText4"
@@ -144,9 +134,9 @@
         android:text="a: "
         android:textSize="16sp"
         android:textStyle="bold"
+        tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="224dp"
-        tools:layout_editor_absoluteY="353dp"
-        tools:ignore="MissingConstraints" />
+        tools:layout_editor_absoluteY="353dp" />
 
     <EditText
         android:id="@+id/editTextText6"
@@ -178,9 +168,9 @@
         android:text="hrs."
         android:textSize="16sp"
         android:textStyle="bold"
+        tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="257dp"
-        tools:layout_editor_absoluteY="427dp"
-        tools:ignore="MissingConstraints" />
+        tools:layout_editor_absoluteY="427dp" />
 
     <EditText
         android:id="@+id/editTextText5"
@@ -200,9 +190,9 @@
         android:text="Cada: "
         android:textSize="16sp"
         android:textStyle="bold"
+        tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="107dp"
-        tools:layout_editor_absoluteY="427dp"
-        tools:ignore="MissingConstraints" />
+        tools:layout_editor_absoluteY="427dp" />
 
     <TextView
         android:id="@+id/textView14"
@@ -216,5 +206,15 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextText2" />
+
+    <ImageButton
+        android:id="@+id/imageButton"
+        android:layout_width="74dp"
+        android:layout_height="42dp"
+        android:cropToPadding="false"
+        android:scrollbarSize="0.dp"
+        app:srcCompat="@drawable/borrar"
+        tools:layout_editor_absoluteX="167dp"
+        tools:layout_editor_absoluteY="587dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
