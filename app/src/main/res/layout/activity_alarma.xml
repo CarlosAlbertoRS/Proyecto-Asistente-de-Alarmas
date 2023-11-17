@@ -24,22 +24,22 @@
         android:layout_width="303dp"
         android:layout_height="286dp"
         android:layout_marginTop="40dp"
+        android:contentDescription="TODO"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView16"
-        app:srcCompat="@drawable/reloj3"
-        android:contentDescription="TODO" />
+        app:srcCompat="@drawable/reloj3" />
 
     <TextView
         android:id="@+id/textView19"
         android:layout_width="384dp"
         android:layout_height="94dp"
         android:layout_marginTop="24dp"
-        android:text="Es la hora de tomar tu medicamento"
+        android:text="@string/es_la_hora_de_tomar_tu_medicamento"
         android:textSize="34sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.592"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView4"
         tools:ignore="TextSizeCheck" />

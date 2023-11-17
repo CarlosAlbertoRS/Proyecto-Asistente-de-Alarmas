@@ -36,5 +36,16 @@ class MainActivity : AppCompatActivity() {
             startActivity(Intent(this, MenuAlarma::class.java))
         }
 
+        val btnAlar = this.findViewById<Button>(R.id.btnAlar)
+
+        btnAlar.setOnClickListener {
+            startActivity(Intent(this, Alarma::class.java))
+        }
+
+        val btnLogo = this.findViewById<Button>(R.id.btnLogo)
+
+        btnLogo.setOnClickListener {
+            startActivity(Intent(this, logo::class.java))
+        }
     }
 }

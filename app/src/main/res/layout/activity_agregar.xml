@@ -258,8 +258,8 @@
                 android:id="@+id/btnCancelar"
                 android:layout_width="52dp"
                 android:layout_height="54dp"
-                android:backgroundTint="#00FFFFFF"
                 android:layout_marginStart="100dp"
+                android:backgroundTint="#00FFFFFF"
                 android:contentDescription="TODO"
                 app:srcCompat="@drawable/cancelar"
                 tools:ignore="MissingConstraints,SpeakableTextPresentCheck" />
