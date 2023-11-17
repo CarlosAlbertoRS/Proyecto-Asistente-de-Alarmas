@@ -24,5 +24,17 @@ class MainActivity : AppCompatActivity() {
             startActivity(Intent(this, menu_principal::class.java))
         }
 
+        val btnEstricto = this.findViewById<Button>(R.id.btnEstricto)
+
+        btnEstricto.setOnClickListener {
+            startActivity(Intent(this, Estricto::class.java))
+        }
+
+        val btnAlarma = this.findViewById<Button>(R.id.btnAlarma)
+
+        btnAlarma.setOnClickListener {
+            startActivity(Intent(this, MenuAlarma::class.java))
+        }
+
     }
 }

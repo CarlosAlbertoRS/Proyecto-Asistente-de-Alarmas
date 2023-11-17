@@ -12,7 +12,7 @@ class MenuAlarma : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_menu_alarma)
 
-        val btnCancelar = findViewById<ImageButton>(R.id.btnCancel)
+        val btnCancelar = findViewById<ImageButton>(R.id.btnCancelar)
 
         btnCancelar.setOnClickListener {
             startActivity(Intent(this, menu_principal::class.java))

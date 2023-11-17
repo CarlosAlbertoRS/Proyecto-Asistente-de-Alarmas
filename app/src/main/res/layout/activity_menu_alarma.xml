@@ -5,11 +5,12 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:scrollbarSize="4dp"
+    android:background="@color/Verde_BG"
     tools:context=".MenuAlarma">
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="410dp"
+        android:layout_height="657dp"
         android:gravity="clip_horizontal|center_horizontal"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -25,10 +26,10 @@
             android:layout_height="wrap_content" />
 
         <ImageView
-            android:id="@+id/imageView5"
+            android:id="@+id/imageView6"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            tools:srcCompat="@drawable/reloj2" />
+            app:srcCompat="@drawable/reloj2" />
 
         <Switch
             android:id="@+id/switch2"
@@ -258,22 +259,22 @@
             android:orientation="horizontal">
 
             <ImageButton
-                android:id="@+id/btnCancelar"
+                android:id="@+id/btnAgregar"
                 android:layout_width="52dp"
                 android:layout_height="54dp"
                 android:backgroundTint="#00FFFFFF"
                 android:contentDescription="TODO"
-                app:srcCompat="@drawable/cancelar"
+                app:srcCompat="@drawable/edit"
                 tools:ignore="MissingConstraints,SpeakableTextPresentCheck" />
 
             <ImageButton
-                android:id="@+id/btnAgregar"
+                android:id="@+id/btnCancelar"
                 android:layout_width="52dp"
                 android:layout_height="54dp"
                 android:layout_marginStart="80dp"
                 android:backgroundTint="#00FFFFFF"
                 android:contentDescription="TODO"
-                app:srcCompat="@drawable/edit"
+                app:srcCompat="@drawable/cancelar"
                 tools:ignore="MissingConstraints,SpeakableTextPresentCheck" />
 
             <ImageButton
