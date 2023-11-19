@@ -11,8 +11,11 @@ import android.os.Bundle
 import android.transition.Explode
 import android.transition.Fade
 import android.widget.Button
+import android.widget.EditText
 import android.widget.Switch
+import android.widget.TextView
 import android.widget.Toast
+import com.example.proyasyst_test.Helpers.SaveState
 import com.example.proyasyst_test.databinding.ActivityMainBinding
 import com.google.android.material.timepicker.MaterialTimePicker
 import com.google.android.material.timepicker.TimeFormat
@@ -20,11 +23,11 @@ import java.util.Calendar
 
 class testeo : AppCompatActivity() {
 
-    private lateinit var binding: ActivityMainBinding
     private lateinit var picker: MaterialTimePicker
     private lateinit var calendar: Calendar
     private lateinit var alarmManager: AlarmManager
     private lateinit var pendingIntent: PendingIntent
+    private lateinit var saveState: SaveState
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -34,8 +37,12 @@ class testeo : AppCompatActivity() {
         var bt1 = findViewById<Button>(R.id.button)
         var bt2 = findViewById<Button>(R.id.Cancelar)
         var bt3 = findViewById<Button>(R.id.Seleccionar)
+        var usuario = findViewById<TextView>(R.id.nombre)
 
         var sw1 = findViewById<Switch>(R.id.sw_estado)
+
+        saveState = SaveState(this, "0B")
+        usuario.text = saveState.getNombre()
 
         createNotificationChannel()
         bt1.setOnClickListener {
@@ -85,7 +92,7 @@ class testeo : AppCompatActivity() {
             //==================================================================================
             // Para la opcion BASICA:
             //==================================================================================
-            // Inicio: 8am -> 10pm
+            // Inicio: 8 am -> 10 pm
             //==================================================================================
             // Cada hora busca alarma |              Dosis                ||    Separacion
             //==================================================================================
@@ -154,7 +161,7 @@ class testeo : AppCompatActivity() {
             Toast.makeText(this,"Listo",Toast.LENGTH_SHORT).show()
         }
 
-        // Crear alarma a parrtir de la hora del usuario (ej. Si activa a las 8:15 poner a las 9)
+        // Crear alarma a partir de la hora del usuario (ej. Si activa a las 8:15 poner a las 9)
 
     }
 

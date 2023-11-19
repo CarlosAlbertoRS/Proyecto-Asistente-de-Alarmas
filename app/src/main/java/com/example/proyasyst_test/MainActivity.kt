@@ -6,7 +6,7 @@ import android.os.Bundle
 import android.widget.LinearLayout
 import androidx.cardview.widget.CardView
 import androidx.viewpager.widget.ViewPager
-import com.example.proyasyst_test.Adapters.OnBoardingAdapter2
+import com.example.proyasyst_test.tutorial.tutorial_1
 
 class MainActivity : AppCompatActivity() {
 
@@ -22,10 +22,10 @@ class MainActivity : AppCompatActivity() {
         dotslayout = findViewById(R.id.dotsL)
         viewPager = findViewById(R.id.slider)
 
-        var adapter = OnBoardingAdapter2(this)
+        //var adapter = OnBoardingAdapter2(R.id.slider)
 
         Thread.sleep(5000)
-        var intent = Intent(this, pg_MenuPrincipal::class.java)
+        var intent = Intent(this, tutorial_1::class.java)
         startActivity(intent)
         //viewPager.adapter = adapter
 

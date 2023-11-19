@@ -9,6 +9,6 @@
     <string name="subtitulo1">"El equipo de Asys-T te da la bienvenida, y espera que te sea util nuestra aplicacion."</string>
     <string name="subtitulo2">"En esta aplicacion podras hacer recordatorios personalizados para tomar tus medicinas."</string>
     <string name="subtitulo3">"Gracias a las opciones de agregar, editar y eliminar podras gestionar tus alarmas como mejor te convenga"</string>
-    <string name="subtitulo4">"Estas a solo un paso de comenzar, pero aun no nos conocemos del todo. \n¿Como te gustaria que te llamaramos?"</string>
+    <string name="subtitulo4">"Estas a solo un paso de comenzar, pero aun no nos conocemos del todo. \n\n¿Como te gustaria que te llamaramos?"</string>
 
 </resources>

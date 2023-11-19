@@ -17,6 +17,32 @@
         android:theme="@style/Theme.ProyAsyst_test"
         tools:targetApi="31">
         <activity
+            android:name=".tutorial.Tutorial_4"
+            android:exported="false"
+            android:theme="@style/SplashScreenTheme"/>
+        <activity
+            android:name=".tutorial.Tutorial_3"
+            android:exported="false"
+            android:theme="@style/SplashScreenTheme"/>
+        <activity
+            android:name=".tutorial.Tutorial_2"
+            android:exported="false"
+            android:theme="@style/SplashScreenTheme"/>
+        <activity
+            android:name=".SplashScreenActivity"
+            android:exported="true"
+            android:theme="@style/SplashScreenTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".tutorial.tutorial_1"
+            android:exported="false"
+            android:theme="@style/SplashScreenTheme"/>
+        <activity
             android:name=".pg_MenuPrincipal"
             android:exported="false" />
 
@@ -32,13 +58,7 @@
             android:exported="false" />
         <activity
             android:name=".MainActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+            android:exported="true" />
     </application>
 
 </manifest>

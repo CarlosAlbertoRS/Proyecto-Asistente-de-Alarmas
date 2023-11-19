@@ -8,17 +8,12 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.viewpager.widget.PagerAdapter
-import com.example.proyasyst_test.MainActivity
 import com.example.proyasyst_test.R
 
-class OnBoardingAdapter2(mainActivity: MainActivity) : PagerAdapter() {
+class OnBoardingAdapter2(slider: Int) : PagerAdapter() {
 
-    val context: Context? = null
-    var layoutInflater: LayoutInflater? = null
-
-    /*fun OnBoardingAdapter2(context: Context) {
-        this.context = context
-    }*/
+    private val context: Context? = null
+    private var layoutInflater: LayoutInflater? = null
 
     private val titles = intArrayOf(
         R.string.titulo1,
@@ -41,7 +36,7 @@ class OnBoardingAdapter2(mainActivity: MainActivity) : PagerAdapter() {
         R.drawable.asyst_icon12
     )
 
-    val bg = intArrayOf(
+    private val bg = intArrayOf(
         R.drawable.bg2,
         R.drawable.bg3,
         R.drawable.bg1,
@@ -67,7 +62,7 @@ class OnBoardingAdapter2(mainActivity: MainActivity) : PagerAdapter() {
         image.setImageResource(images[position])
         title.setText(titles[position])
         subtitle.setText(subtitles[position])
-        layout.setBackgroundResource(position)
+        layout.setBackgroundResource(bg[position])
         container.addView(v)
         return v
     }
