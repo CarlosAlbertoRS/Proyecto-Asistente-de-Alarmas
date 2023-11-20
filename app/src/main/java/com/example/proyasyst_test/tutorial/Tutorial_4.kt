@@ -26,7 +26,7 @@ class Tutorial_4 : AppCompatActivity() {
 
 
         nextCard4.setOnClickListener {
-            if(nom.text.toString()=="" || nom.text.toString().isEmpty()){
+            if(nom.text.toString()==" " || nom.text.toString().isEmpty()){
                 val miDialogo = AlertDialog.Builder(this)
                 miDialogo.setTitle("Atencion")
                 miDialogo.setMessage("Es necesario que coloques tu nombre en el recuadro que esta en el centro centro antes de comenzar.")

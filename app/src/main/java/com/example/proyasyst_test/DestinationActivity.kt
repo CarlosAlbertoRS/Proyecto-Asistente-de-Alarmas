@@ -7,11 +7,14 @@ import android.os.Vibrator
 import android.transition.Explode
 import android.view.WindowManager
 import android.widget.ImageButton
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import com.example.proyasyst_test.Helpers.SaveState
 
 class DestinationActivity : AppCompatActivity() {
     private lateinit var mp: MediaPlayer
     private lateinit var v: Vibrator
+    private lateinit var saveState: SaveState
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         window.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN)
@@ -20,6 +23,10 @@ class DestinationActivity : AppCompatActivity() {
         mp = MediaPlayer.create(this, R.raw.alarma)
         mp.start ()
         mp.isLooping = true
+
+        val nombreUsuario = findViewById<TextView>(R.id.txtConsulta2)
+        saveState = SaveState(this, "0B")
+        nombreUsuario.text = saveState.getNombre()
 
         v = getSystemService(VIBRATOR_SERVICE) as Vibrator
         val pattern = longArrayOf(0, 225, 800)

@@ -1,5 +1,6 @@
 package com.example.proyasyst_test
 
+import android.Manifest
 import android.app.AlarmManager
 import android.app.NotificationChannel
 import android.app.NotificationManager
@@ -7,6 +8,7 @@ import android.app.PendingIntent
 import android.content.ComponentName
 import android.content.Intent
 import android.content.pm.PackageManager
+import android.net.Uri
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -17,6 +19,9 @@ import android.widget.EditText
 import android.widget.Switch
 import android.widget.TextView
 import android.widget.Toast
+import androidx.activity.result.contract.ActivityResultContracts
+import androidx.core.app.ActivityCompat
+import androidx.core.content.ContextCompat
 import com.example.proyasyst_test.Helpers.SaveState
 import com.example.proyasyst_test.databinding.ActivityMainBinding
 import com.google.android.material.timepicker.MaterialTimePicker
@@ -32,17 +37,30 @@ class testeo : AppCompatActivity() {
     private lateinit var alarmManager: AlarmManager
     private lateinit var pendingIntent: PendingIntent
     private lateinit var saveState: SaveState
+    private val requestPermissionLauncher = registerForActivityResult(
+        ActivityResultContracts.RequestPermission())
+    { isGranted ->
+        if(isGranted){
+            call()
+        } else{
+            Toast.makeText(this,"Necesitas dar permisos para realizar esta accion.",Toast.LENGTH_SHORT).show()
+        }
+    }
+
+
+    private fun call() {
+        startActivity(Intent(Intent.ACTION_CALL, Uri.parse("tel:9112")))
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_testeo)
 
-
         var bt1 = findViewById<Button>(R.id.button)
         var bt2 = findViewById<Button>(R.id.Cancelar)
         var bt3 = findViewById<Button>(R.id.Seleccionar)
         var usuario = findViewById<TextView>(R.id.nombre)
-
+        var emer = findViewById<Button>(R.id.btnEmergencia)
         var sw1 = findViewById<Switch>(R.id.sw_estado)
 
         saveState = SaveState(this, "0B")
@@ -57,6 +75,19 @@ class testeo : AppCompatActivity() {
         }
         bt3.setOnClickListener {
             setPicker()
+        }
+        emer.setOnClickListener {
+            val intento = Intent(Intent.ACTION_CALL)
+            intento.setData(Uri.parse("tel:9112"))
+            if(Build.VERSION.SDK_INT>=Build.VERSION_CODES.M){
+                when{
+                    ContextCompat.checkSelfPermission(this,Manifest.permission.CALL_PHONE)==PackageManager.PERMISSION_GRANTED ->{
+                        call()
+                    }
+                    else -> requestPermissionLauncher.launch(Manifest.permission.CALL_PHONE)
+                }
+            }
+            startActivity(intento)
         }
 
     }
@@ -166,10 +197,10 @@ class testeo : AppCompatActivity() {
                 PackageManager.DONT_KILL_APP
             )
 
-            Toast.makeText(this,"Ya creada",Toast.LENGTH_SHORT).show()
+            Toast.makeText(this,"Creada",Toast.LENGTH_SHORT).show()
 
         } else{
-            Toast.makeText(this,"Listo",Toast.LENGTH_SHORT).show()
+            Toast.makeText(this,"Ya estuvo suavi-crema",Toast.LENGTH_SHORT).show()
         }
 
         // Crear alarma a partir de la hora del usuario (ej. Si activa a las 8:15 poner a las 9)
