@@ -21,4 +21,13 @@ public class SaveState(context: Context, saveName: String) {
     fun getNombre(): String? {
         return sp!!.getString("usuNom","0")
     }
+
+    fun setAlarm(active: Int){
+        val editor = sp!!.edit()
+        editor.putInt("Alarm", active)
+        editor.apply()
+    }
+    fun getAlarm(): Int {
+        return sp!!.getInt("Alarm",0)
+    }
 }

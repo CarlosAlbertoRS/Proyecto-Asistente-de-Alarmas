@@ -4,7 +4,9 @@ import android.app.AlarmManager
 import android.app.NotificationChannel
 import android.app.NotificationManager
 import android.app.PendingIntent
+import android.content.ComponentName
 import android.content.Intent
+import android.content.pm.PackageManager
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -19,7 +21,9 @@ import com.example.proyasyst_test.Helpers.SaveState
 import com.example.proyasyst_test.databinding.ActivityMainBinding
 import com.google.android.material.timepicker.MaterialTimePicker
 import com.google.android.material.timepicker.TimeFormat
+import java.text.DateFormat
 import java.util.Calendar
+import kotlin.time.Duration.Companion.hours
 
 class testeo : AppCompatActivity() {
 
@@ -131,16 +135,21 @@ class testeo : AppCompatActivity() {
         alarmManager = getSystemService(ALARM_SERVICE) as AlarmManager
         val intent = Intent(this,alarmaRecive::class.java)
 
+        val receiver = ComponentName(this, alarmaRecive::class.java)
+
         pendingIntent = PendingIntent.getBroadcast(this,0,
             intent, PendingIntent.FLAG_IMMUTABLE)
 
-        if(alarmManager==null){
-
+        if(saveState.getAlarm()!=1){
+            saveState.setAlarm(1)
+            val calendario = Calendar.getInstance().time.hours
+            val hora = findViewById<TextView>(R.id.hora)
+            hora.text = (calendario + 1).toString()
 
             if(System.currentTimeMillis().toInt() !=0){}
             val calendar: Calendar = Calendar.getInstance().apply {
                 timeInMillis = System.currentTimeMillis()
-                set(Calendar.HOUR_OF_DAY, 0)
+                set(Calendar.HOUR_OF_DAY, calendario+1)
                 set(Calendar.MINUTE, 0)
             }
 
@@ -150,14 +159,16 @@ class testeo : AppCompatActivity() {
                 1000 * 60 * 60,
                 pendingIntent)
 
+
+            this.packageManager.setComponentEnabledSetting(
+                receiver,
+                PackageManager.COMPONENT_ENABLED_STATE_ENABLED,
+                PackageManager.DONT_KILL_APP
+            )
+
             Toast.makeText(this,"Ya creada",Toast.LENGTH_SHORT).show()
 
         } else{
-            alarmManager.setRepeating(
-            AlarmManager.RTC_WAKEUP,calendar.timeInMillis,
-            AlarmManager.INTERVAL_DAY,pendingIntent
-            )
-
             Toast.makeText(this,"Listo",Toast.LENGTH_SHORT).show()
         }
 
