@@ -171,7 +171,7 @@ class testeo : AppCompatActivity() {
         pendingIntent = PendingIntent.getBroadcast(this,0,
             intent, PendingIntent.FLAG_IMMUTABLE)
 
-        if(saveState.getAlarm()!=1){
+        if(saveState.getAlarm()==0){
             saveState.setAlarm(1)
             val calendario = Calendar.getInstance().time.hours
             val hora = findViewById<TextView>(R.id.hora)
