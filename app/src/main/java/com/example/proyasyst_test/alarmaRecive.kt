@@ -14,10 +14,13 @@ import androidx.annotation.ColorInt
 import androidx.core.app.ActivityCompat
 import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
+import com.example.proyasyst_test.Helpers.SaveState
 
 class alarmaRecive: BroadcastReceiver() {
-
+    private lateinit var saveState: SaveState
     override fun onReceive(context: Context?, intent: Intent?) {
+
+        saveState = SaveState(context!!, "0B")
 
         val i = Intent(context, DestinationActivity::class.java)
         intent!!.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
@@ -27,13 +30,13 @@ class alarmaRecive: BroadcastReceiver() {
         val builder = NotificationCompat.Builder(context!!,"Asys-T")
             .setSmallIcon(R.drawable.olla)
             .setContentTitle("Alarma Activa !")
-            .setContentText("Hola, ya es hora de que se tome su medicación.")
+            .setContentText("Hola "+saveState.getNombre()+"., ya es hora de que se tome su medicación.")
             .setAutoCancel(true)
             .setStyle(NotificationCompat.BigTextStyle().bigText("" +
-                          "\n   Se ha activado una alarma que indica que debes tomarte tus pastillas." +
-                        "\n\nTe invitamos a dar click aquí para desactivarla..." +
-                        "\n\n_________________________" +
-                    "\n>> AsysT - Team    (°<°) / "))
+                              "\nSe activo una alarma que indica que debes tomarte tus pastillas." +
+                            "\n\nTe invitamos a dar click aquí para desactivarla." +
+                            "\n\n_________________________" +
+                              "\n>> AsysT - Team    (°<°) / "))
             .setDefaults(NotificationCompat.DEFAULT_ALL)
             .setLights(1,500,500)
             .setPriority(NotificationCompat.PRIORITY_HIGH)
@@ -47,8 +50,8 @@ class alarmaRecive: BroadcastReceiver() {
         ) {
             return
         }
-        notificationManager.notify(1,builder.build())
-
+        notificationManager.notify(saveState.getAlarm(),builder.build())
+        saveState.setAlarm(saveState.getAlarm()+1)
     }
 
 }
