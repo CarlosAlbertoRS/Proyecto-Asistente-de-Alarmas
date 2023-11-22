@@ -4,6 +4,8 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ImageButton
+import android.widget.Switch
+import androidx.appcompat.app.AlertDialog
 
 class menu_principal : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -19,6 +21,27 @@ class menu_principal : AppCompatActivity() {
 
         btnRegistro.setOnClickListener {
             startActivity(Intent(this, MenuRegistro::class.java))
+        }
+
+        val btnLlamada = findViewById<ImageButton>(R.id.btnLlamada)
+
+        btnLlamada.setOnClickListener {
+            val alerta = AlertDialog.Builder(this)
+
+
+            alerta.setMessage("Si sufres de algun percance médico y/o efecto secundario, le recomendamos" +
+                    " solicitar apoyo médico")
+                .setCancelable(false)
+                .setPositiveButton("si") { dialog, which ->
+                    dialog.cancel()
+                }
+                .setNegativeButton("Cancelar") { dialog, which ->
+                    dialog.cancel()
+                }
+
+            val titulo = alerta.create()
+            titulo.setTitle("¿Deseas llamar al numero de emergencia?")
+            titulo.show()
         }
 
     }

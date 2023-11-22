@@ -5,6 +5,8 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ImageButton
+import android.widget.Switch
+import androidx.appcompat.app.AlertDialog
 
 class agregar : AppCompatActivity() {
     @SuppressLint("MissingInflatedId")
@@ -16,6 +18,26 @@ class agregar : AppCompatActivity() {
 
         btnCancelar.setOnClickListener {
             startActivity(Intent(this, menu_principal::class.java))
+        }
+
+        val btnSwich = findViewById<Switch>(R.id.swich)
+
+        btnSwich.setOnClickListener {
+            val alerta = AlertDialog.Builder(this)
+
+
+            alerta.setMessage("Este modo esta diseñado para brindar apoyo las 24hr. a partir del lapso especificado")
+                .setCancelable(false)
+                .setPositiveButton("si") { dialog, which ->
+                    startActivity(Intent(this, Estricto::class.java))
+                }
+                .setNegativeButton("Cancelar") { dialog, which ->
+                    dialog.cancel()
+                }
+
+            val titulo = alerta.create()
+            titulo.setTitle("¿Deseas activar el modo estricto?")
+            titulo.show()
         }
     }
 }
