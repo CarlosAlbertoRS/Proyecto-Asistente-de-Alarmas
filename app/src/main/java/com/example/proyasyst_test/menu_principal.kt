@@ -1,13 +1,16 @@
 package com.example.proyasyst_test
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Button
 import android.widget.ImageButton
 import android.widget.Switch
 import androidx.appcompat.app.AlertDialog
 
 class menu_principal : AppCompatActivity() {
+    @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_menu_principal)
@@ -42,6 +45,11 @@ class menu_principal : AppCompatActivity() {
             val titulo = alerta.create()
             titulo.setTitle("¿Deseas llamar al numero de emergencia?")
             titulo.show()
+        }
+
+        val btnExtra = findViewById<Button>(R.id.button2)
+        btnRegistro.setOnClickListener {
+            startActivity(Intent(this, MainActivity::class.java))
         }
 
     }
