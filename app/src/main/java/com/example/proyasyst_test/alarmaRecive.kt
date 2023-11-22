@@ -30,13 +30,13 @@ class alarmaRecive: BroadcastReceiver() {
         val builder = NotificationCompat.Builder(context!!,"Asys-T")
             .setSmallIcon(R.drawable.olla)
             .setContentTitle("Alarma Activa !")
-            .setContentText("Hola "+saveState.getNombre()+"., ya es hora de que se tome su medicación.")
+            .setContentText("Hola "+saveState.getNombre()+", ya es hora de que se tome su medicación.")
             .setAutoCancel(true)
             .setStyle(NotificationCompat.BigTextStyle().bigText("" +
                               "\nSe activo una alarma que indica que debes tomarte tus pastillas." +
                             "\n\nTe invitamos a dar click aquí para desactivarla." +
                             "\n\n_________________________" +
-                              "\n>> AsysT - Team    (°<°) / "))
+                              "\n>> AsysT - Team    (°<°) /   <"+saveState.getAlarm()+">"))
             .setDefaults(NotificationCompat.DEFAULT_ALL)
             .setLights(1,500,500)
             .setPriority(NotificationCompat.PRIORITY_HIGH)

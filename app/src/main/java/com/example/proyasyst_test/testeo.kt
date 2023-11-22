@@ -148,6 +148,15 @@ class testeo : AppCompatActivity() {
             // Si cantidad = c=(24/n) => d=(Int)(24/n) pm                 =>   1 cada n hr
             //==================================================================================
 
+            //==================================================================================
+            // ID || Nombre
+            // ID || IDUsua || Medicamento || TiempoDias || TiempoFaltantes || Estado 0-1-2
+            // ID || IDMedi || Hora
+            //==================================================================================
+
+            // 24 / 3 = 6 -> 0 - 6 - 12 - 18
+            // 7      = 7 -> 0 - 7 - 14 - 21
+            // if ( hr == 24 ) { TiempoDias = todos - 1 }
         }
     }
 
@@ -187,7 +196,7 @@ class testeo : AppCompatActivity() {
             alarmManager?.setRepeating(
                 AlarmManager.RTC_WAKEUP,
                 calendar.timeInMillis,
-                1000 * 60 * 60,
+                1000 * 60 * 2,
                 pendingIntent)
 
 
