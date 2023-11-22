@@ -50,7 +50,7 @@
         android:id="@+id/nextCardtutorial1"
         android:layout_width="48dp"
         android:layout_height="48dp"
-        android:backgroundTint="#728071"
+        android:backgroundTint="#A8728071"
         android:clickable="true"
         android:contentDescription="j"
         android:focusable="true"

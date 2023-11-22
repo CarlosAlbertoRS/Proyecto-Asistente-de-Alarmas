@@ -196,7 +196,7 @@ class testeo : AppCompatActivity() {
             alarmManager?.setRepeating(
                 AlarmManager.RTC_WAKEUP,
                 calendar.timeInMillis,
-                1000 * 60 * 2,
+                1000 * 60 * 60,
                 pendingIntent)
 
 
