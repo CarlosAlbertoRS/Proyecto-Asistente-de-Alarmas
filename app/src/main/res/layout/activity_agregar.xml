@@ -22,12 +22,12 @@
         <TextView
             android:id="@+id/textView23"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="39dp" />
 
         <ImageView
             android:id="@+id/imageView6"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_width="422dp"
+            android:layout_height="178dp"
             app:srcCompat="@drawable/reloj2" />
 
         <Switch
@@ -217,11 +217,6 @@
                 tools:ignore="MissingConstraints" />
 
         </LinearLayout>
-
-        <TextView
-            android:id="@+id/textView28"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
 
         <LinearLayout
             android:layout_width="match_parent"

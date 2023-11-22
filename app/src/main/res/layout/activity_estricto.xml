@@ -22,12 +22,12 @@
         <TextView
             android:id="@+id/textView23"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="36dp" />
 
         <ImageView
             android:id="@+id/imageView6"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="171dp"
             app:srcCompat="@drawable/reloj2" />
 
         <Switch
