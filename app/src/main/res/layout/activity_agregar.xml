@@ -62,26 +62,14 @@
             android:layout_marginTop="4dp"
             android:ems="10"
             android:inputType="text"
-            android:minHeight="48dp"
+            android:minHeight="38dp"
             android:textSize="12sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView13"
-            tools:ignore="LabelFor,SpeakableTextPresentCheck" />
+            tools:ignore="LabelFor,SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
         <TextView
-            android:id="@+id/textView14"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
-            android:text=" Horario activo: "
-            android:textSize="16sp"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextText2" />
+            android:id="@+id/textView5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -90,33 +78,11 @@
             android:orientation="horizontal">
 
             <TextView
-                android:id="@+id/textView9"
+                android:id="@+id/textView14"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="De: "
-                android:textSize="16sp"
-                android:textStyle="bold"
-                app:layout_constraintBottom_toTopOf="@+id/editTextText5"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView14"
-                tools:ignore="MissingConstraints" />
-
-            <EditText
-                android:id="@+id/editTextText5"
-                android:layout_width="74dp"
-                android:layout_height="36dp"
-                android:layout_marginStart="15dp"
-                android:ems="10"
-                android:inputType="text"
-                android:textSize="12sp"
-                tools:ignore="LabelFor,MissingConstraints,SpeakableTextPresentCheck,TouchTargetSizeCheck" />
-
-            <TextView
-                android:id="@+id/textView18"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="20dp"
-                android:text="a: "
+                android:text="Dosis diarias: "
+                android:layout_marginBottom="8dp"
                 android:textSize="16sp"
                 android:textStyle="bold" />
 
@@ -124,8 +90,8 @@
                 android:id="@+id/editTextText6"
                 android:layout_width="74dp"
                 android:layout_height="36dp"
-                android:layout_marginStart="15dp"
                 android:ems="10"
+                android:gravity="center_horizontal"
                 android:inputType="text"
                 android:textSize="12sp"
                 tools:ignore="LabelFor,MissingConstraints,SpeakableTextPresentCheck,TouchTargetSizeCheck" />
@@ -134,48 +100,6 @@
 
         <TextView
             android:id="@+id/textView26"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center_horizontal|center_vertical"
-            android:orientation="horizontal">
-
-            <TextView
-                android:id="@+id/textView20"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Cada: "
-                android:textSize="16sp"
-                android:textStyle="bold" />
-
-            <EditText
-                android:id="@+id/editTextText3"
-                android:layout_width="74dp"
-                android:layout_height="36dp"
-                android:layout_marginStart="15dp"
-                android:ems="10"
-                android:inputType="text"
-                android:textSize="12sp"
-                tools:ignore="LabelFor,MissingConstraints,SpeakableTextPresentCheck,TouchTargetSizeCheck" />
-
-            <TextView
-                android:id="@+id/textView17"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="15dp"
-                android:text="hrs."
-                android:textSize="16sp"
-                android:textStyle="bold"
-                tools:ignore="MissingConstraints" />
-
-
-        </LinearLayout>
-
-        <TextView
-            android:id="@+id/textView25"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
@@ -217,6 +141,31 @@
                 tools:ignore="MissingConstraints" />
 
         </LinearLayout>
+
+        <TextView
+            android:id="@+id/textView25"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:text="*Horario activo: "
+            android:textSize="16sp"
+            android:textStyle="bold"
+            tools:ignore="MissingConstraints" />
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:text="De: 8am a: 10pm"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            tools:ignore="MissingConstraints" />
 
         <LinearLayout
             android:layout_width="match_parent"

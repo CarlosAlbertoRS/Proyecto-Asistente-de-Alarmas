@@ -48,7 +48,7 @@ class menu_principal : AppCompatActivity() {
         }
 
         val btnExtra = findViewById<Button>(R.id.button2)
-        btnRegistro.setOnClickListener {
+        btnExtra.setOnClickListener {
             startActivity(Intent(this, MainActivity::class.java))
         }
 
