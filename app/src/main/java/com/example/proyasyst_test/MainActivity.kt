@@ -11,13 +11,6 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        var bt1 = this.findViewById<Button>(R.id.btn_test)
-
-        bt1.setOnClickListener {
-            var intent = Intent(this, testeo::class.java)
-            startActivity(intent)
-        }
-
         val btnRed = this.findViewById<Button>(R.id.btnRed)
 
         btnRed.setOnClickListener {

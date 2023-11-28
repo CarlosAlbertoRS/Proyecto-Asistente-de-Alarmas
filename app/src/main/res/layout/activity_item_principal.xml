@@ -49,7 +49,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/horas"
+            android:id="@+id/administrada"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Cada 8 hrs"
@@ -60,7 +60,7 @@
             app:layout_constraintTop_toBottomOf="@+id/medicamento" />
 
         <TextView
-            android:id="@+id/consumo"
+            android:id="@+id/total"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
@@ -68,10 +68,10 @@
             android:text="Consumidas: 3"
             android:textSize="20sp"
             app:layout_constraintStart_toEndOf="@+id/imagen"
-            app:layout_constraintTop_toBottomOf="@+id/horas" />
+            app:layout_constraintTop_toBottomOf="@+id/administrada" />
 
         <TextView
-            android:id="@+id/totales"
+            android:id="@+id/estado"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
@@ -79,7 +79,7 @@
             android:textSize="20sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@+id/imagen"
-            app:layout_constraintTop_toBottomOf="@+id/consumo"
+            app:layout_constraintTop_toBottomOf="@+id/total"
             app:layout_constraintVertical_bias="0.176" />
 
         <Switch
