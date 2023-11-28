@@ -259,7 +259,7 @@
             android:orientation="horizontal">
 
             <ImageButton
-                android:id="@+id/btnAgregar"
+                android:id="@+id/btnEditar"
                 android:layout_width="52dp"
                 android:layout_height="54dp"
                 android:backgroundTint="#00FFFFFF"
@@ -268,7 +268,7 @@
                 tools:ignore="MissingConstraints,SpeakableTextPresentCheck" />
 
             <ImageButton
-                android:id="@+id/btnCancelar"
+                android:id="@+id/btnRegresar"
                 android:layout_width="52dp"
                 android:layout_height="54dp"
                 android:layout_marginStart="80dp"
@@ -278,7 +278,7 @@
                 tools:ignore="MissingConstraints,SpeakableTextPresentCheck" />
 
             <ImageButton
-                android:id="@+id/btnborrar"
+                android:id="@+id/btnBorrar"
                 android:layout_width="52dp"
                 android:layout_height="54dp"
                 android:layout_marginStart="80dp"

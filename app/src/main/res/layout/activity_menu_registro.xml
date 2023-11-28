@@ -50,43 +50,41 @@
         </LinearLayout>
 
         <TextView
-            android:id="@+id/textView27"
+            android:id="@+id/textView24"
             android:layout_width="match_parent"
             android:layout_height="30dp" />
+
+        <Switch
+            android:id="@+id/switch2"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:checked="true"
+            android:minHeight="48dp"
+            android:scaleX="2"
+            android:scaleY="2"
+            android:text="Alarmas activas:"
+            android:textSize="16sp"
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/textView8"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="Alarmas activas:"
             android:textSize="20sp"
             android:textStyle="bold" />
 
         <androidx.recyclerview.widget.RecyclerView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" >
+            android:layout_width="369dp"
+            android:layout_height="416dp"
+            android:background="#78B5A3">
 
         </androidx.recyclerview.widget.RecyclerView>
 
         <TextView
-            android:id="@+id/textView12"
+            android:id="@+id/textView27"
             android:layout_width="match_parent"
-            android:layout_height="33dp" />
-
-        <TextView
-            android:id="@+id/textView22"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Finalizado:"
-            android:textSize="20sp"
-            android:textStyle="bold" />
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" >
-
-        </androidx.recyclerview.widget.RecyclerView>
+            android:layout_height="40dp" />
 
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
