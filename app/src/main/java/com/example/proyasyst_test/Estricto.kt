@@ -14,9 +14,9 @@ class Estricto : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_estricto)
 
-        val btnCancelar = findViewById<ImageButton>(R.id.btnCancelar)
+        val btnAtras = findViewById<ImageButton>(R.id.btnAtras)
 
-        btnCancelar.setOnClickListener {
+        btnAtras.setOnClickListener {
             startActivity(Intent(this, menu_principal::class.java))
         }
 

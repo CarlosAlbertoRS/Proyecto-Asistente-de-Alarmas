@@ -7,11 +7,13 @@ import android.os.Bundle
 import android.widget.ImageButton
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.proyasyst_test.databinding.ActivityMainBinding
+import androidx.recyclerview.widget.RecyclerView
+import com.example.proyasyst_test.adapter.adaptador
+import com.example.proyasyst_test.databinding.ActivityMenuRegistroBinding
 
 class MenuRegistro : AppCompatActivity() {
 
-    private lateinit var binding: ActivityMainBinding
+    private lateinit var binding: ActivityMenuRegistroBinding
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -23,16 +25,15 @@ class MenuRegistro : AppCompatActivity() {
             startActivity(Intent(this, menu_principal::class.java))
         }
 
-        binding = ActivityMainBinding.inflate(layoutInflater)
+        binding = ActivityMenuRegistroBinding.inflate(layoutInflater)
         setContentView(binding.root)
         initRecycleView()
     }
 
     private fun initRecycleView() {
-
-        binding.recyclerSuperHeroe.layoutManager = LinearLayoutManager(this)
-        binding.recyclerSuperHeroe.adapter =
-            SuerHeroeAdaptador(listaDatos.ListaSuperHeroes) { superHeroe ->
+        binding.recyclerRegistros.layoutManager = LinearLayoutManager(this)
+        binding.recyclerRegistros.adapter =
+            adaptador(listaDatos.ListaSuperHeroes) { superHeroe ->
                 onItemSeleccionado(superHeroe)
             }
     }

@@ -19,7 +19,7 @@ class MenuAlarma : AppCompatActivity() {
             startActivity(Intent(this, menu_principal::class.java))
         }
 
-        val btnBorrar = findViewById<ImageButton>(R.id.btnborrar)
+        val btnBorrar = findViewById<ImageButton>(R.id.btnBorrar)
 
         btnBorrar.setOnClickListener {
             val alerta = AlertDialog.Builder(this)

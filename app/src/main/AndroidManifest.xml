@@ -31,24 +31,7 @@
             android:name=".agregar"
             android:exported="false" />
         <activity
-            android:name=".MEliminar"
-            android:exported="false" />
-        <activity
-            android:name=".DesEstricto"
-            android:exported="false" />
-        <activity
             android:name=".logo"
-            android:exported="false" />
-        <activity
-            android:name=".plantilla2"
-            android:exported="false" />
-        <activity
-            android:name=".Pantalla4"
-            android:exported="false"
-            android:label="@string/title_activity_pantalla4"
-            android:theme="@style/Theme.ProyAsyst_test" />
-        <activity
-            android:name=".testeo"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
