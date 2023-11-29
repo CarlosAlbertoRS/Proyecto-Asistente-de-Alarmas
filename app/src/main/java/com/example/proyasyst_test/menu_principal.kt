@@ -6,14 +6,22 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.ImageButton
-import android.widget.Switch
 import androidx.appcompat.app.AlertDialog
+import android.widget.Toast
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.proyasyst_test.adapter.adaptadorPrin
+import com.example.proyasyst_test.databinding.ActivityMenuPrincipalBinding
+
 
 class menu_principal : AppCompatActivity() {
+
+    private lateinit var binding: ActivityMenuPrincipalBinding
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_menu_principal)
+        binding = ActivityMenuPrincipalBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+        initRecycleView()
 
         val btnMas= findViewById<ImageButton>(R.id.btnMas)
         val btnRegistro = findViewById<ImageButton>(R.id.btnRegistro)
@@ -52,5 +60,18 @@ class menu_principal : AppCompatActivity() {
             startActivity(Intent(this, MainActivity::class.java))
         }
 
+    }
+
+    private fun initRecycleView() {
+        binding.recyclerPrin.layoutManager = LinearLayoutManager(this)
+        binding.recyclerPrin.adapter =
+            adaptadorPrin(listaDatosPrin.ListaSuperHeroes) { superHeroe ->
+                onItemSeleccionado(superHeroe)
+            }
+    }
+
+    fun onItemSeleccionado(superHeroe: variablesPrin) {
+        Toast.makeText(this,superHeroe.medicamento,Toast.LENGTH_SHORT).show()
+        Toast.makeText(this,superHeroe.estado,Toast.LENGTH_SHORT).show()
     }
 }

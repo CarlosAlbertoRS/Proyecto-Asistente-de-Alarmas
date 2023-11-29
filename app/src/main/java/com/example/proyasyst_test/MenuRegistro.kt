@@ -7,7 +7,6 @@ import android.os.Bundle
 import android.widget.ImageButton
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.example.proyasyst_test.adapter.adaptador
 import com.example.proyasyst_test.databinding.ActivityMenuRegistroBinding
 
@@ -17,7 +16,9 @@ class MenuRegistro : AppCompatActivity() {
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_menu_registro)
+        binding = ActivityMenuRegistroBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+        initRecycleView()
 
         val btnVolver= findViewById<ImageButton>(R.id.btnVolver)
 
@@ -25,9 +26,6 @@ class MenuRegistro : AppCompatActivity() {
             startActivity(Intent(this, menu_principal::class.java))
         }
 
-        binding = ActivityMenuRegistroBinding.inflate(layoutInflater)
-        setContentView(binding.root)
-        initRecycleView()
     }
 
     private fun initRecycleView() {
