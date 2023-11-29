@@ -11,13 +11,13 @@ class viewFolder (view: View) : RecyclerView.ViewHolder(view) {
     val binding = ItemRegistroActivasBinding.bind(view)
 
     @SuppressLint("CheckResult")
-    fun render(superHeroeModelo: variables, onClickListener: (variables)->Unit) {
-        binding.medicamento.text = superHeroeModelo.medicamento
-        binding.fecha.text = superHeroeModelo.fecha
-        binding.administrada.text = superHeroeModelo.administrada
-        binding.total.text = superHeroeModelo.total
-        binding.estado.text = superHeroeModelo.estado
-        binding.tipo.text = superHeroeModelo.tipo
-        itemView.setOnClickListener{ onClickListener(superHeroeModelo)}
+    fun render(DatosMedicamentos: variables, onClickListener: (variables)->Unit) {
+        binding.medicamento.text = DatosMedicamentos.medicamento
+        binding.fecha.text = DatosMedicamentos.fecha
+        binding.administrada.text = DatosMedicamentos.administrada
+        binding.total.text = DatosMedicamentos.total
+        binding.estado.text = DatosMedicamentos.estado
+        binding.tipo.text = DatosMedicamentos.tipo
+        itemView.setOnClickListener{ onClickListener(DatosMedicamentos)}
     }
 }

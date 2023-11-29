@@ -65,13 +65,13 @@ class menu_principal : AppCompatActivity() {
     private fun initRecycleView() {
         binding.recyclerPrin.layoutManager = LinearLayoutManager(this)
         binding.recyclerPrin.adapter =
-            adaptadorPrin(listaDatosPrin.ListaSuperHeroes) { superHeroe ->
-                onItemSeleccionado(superHeroe)
+            adaptadorPrin(listaDatosPrin.ListaMedicamentos) { medicina ->
+                onItemSeleccionado(medicina)
             }
     }
 
-    fun onItemSeleccionado(superHeroe: variablesPrin) {
-        Toast.makeText(this,superHeroe.medicamento,Toast.LENGTH_SHORT).show()
-        Toast.makeText(this,superHeroe.estado,Toast.LENGTH_SHORT).show()
+    fun onItemSeleccionado(medicina: variablesPrin) {
+        Toast.makeText(this,medicina.medicamento,Toast.LENGTH_SHORT).show()
+        Toast.makeText(this,medicina.tiempos,Toast.LENGTH_SHORT).show()
     }
 }

@@ -31,13 +31,13 @@ class MenuRegistro : AppCompatActivity() {
     private fun initRecycleView() {
         binding.recyclerRegistros.layoutManager = LinearLayoutManager(this)
         binding.recyclerRegistros.adapter =
-            adaptador(listaDatos.ListaSuperHeroes) { superHeroe ->
-                onItemSeleccionado(superHeroe)
+            adaptador(listaDatos.ListaMedicamentos) { medicina ->
+                onItemSeleccionado(medicina)
             }
     }
 
-    fun onItemSeleccionado(superHeroe: variables) {
-        Toast.makeText(this,superHeroe.medicamento,Toast.LENGTH_SHORT).show()
-        Toast.makeText(this,superHeroe.estado,Toast.LENGTH_SHORT).show()
+    fun onItemSeleccionado(medicina: variables) {
+        Toast.makeText(this,medicina.medicamento,Toast.LENGTH_SHORT).show()
+        Toast.makeText(this,medicina.estado,Toast.LENGTH_SHORT).show()
     }
 }

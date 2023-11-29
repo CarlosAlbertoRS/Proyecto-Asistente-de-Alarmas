@@ -7,6 +7,7 @@ import android.os.Bundle
 import android.widget.ImageButton
 import android.widget.Switch
 import androidx.appcompat.app.AlertDialog
+import com.google.android.material.switchmaterial.SwitchMaterial
 
 class agregar : AppCompatActivity() {
     @SuppressLint("MissingInflatedId")
@@ -20,7 +21,7 @@ class agregar : AppCompatActivity() {
             startActivity(Intent(this, menu_principal::class.java))
         }
 
-        val btnSwich = findViewById<Switch>(R.id.swich)
+        val btnSwich = findViewById<Switch>(R.id.switchAgregar)
 
         btnSwich.setOnClickListener {
             val alerta = AlertDialog.Builder(this)
@@ -33,11 +34,13 @@ class agregar : AppCompatActivity() {
                 }
                 .setNegativeButton("Cancelar") { dialog, which ->
                     dialog.cancel()
+                    btnSwich.isChecked
                 }
 
             val titulo = alerta.create()
             titulo.setTitle("¿Deseas activar el modo estricto?")
             titulo.show()
         }
+
     }
 }

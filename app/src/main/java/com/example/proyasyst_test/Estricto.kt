@@ -20,7 +20,7 @@ class Estricto : AppCompatActivity() {
             startActivity(Intent(this, menu_principal::class.java))
         }
 
-        val btnSwich = findViewById<Switch>(R.id.swich)
+        val btnSwich = findViewById<Switch>(R.id.switchEstricto)
 
         btnSwich.setOnClickListener {
             val alerta = AlertDialog.Builder(this)

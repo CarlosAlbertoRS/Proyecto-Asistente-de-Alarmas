@@ -11,11 +11,11 @@ class viewFolderPrin (view: View) : RecyclerView.ViewHolder(view) {
     val binding = ActivityItemPrincipalBinding.bind(view)
 
     @SuppressLint("CheckResult")
-    fun render(superHeroeModelo: variablesPrin, onClickListener: (variablesPrin)->Unit) {
-        binding.medicamento.text = superHeroeModelo.medicamento
-        binding.administrada.text = superHeroeModelo.administrada
-        binding.total.text = superHeroeModelo.total
-        binding.estado.text = superHeroeModelo.estado
-        itemView.setOnClickListener{ onClickListener(superHeroeModelo)}
+    fun render(DatosMedicamentos: variablesPrin, onClickListener: (variablesPrin)->Unit) {
+        binding.medicamento.text = DatosMedicamentos.medicamento
+        binding.tiempos.text = DatosMedicamentos.tiempos
+        binding.consumidas.text = DatosMedicamentos.consumidas
+        binding.totales.text = DatosMedicamentos.totales
+        itemView.setOnClickListener{ onClickListener(DatosMedicamentos)}
     }
 }

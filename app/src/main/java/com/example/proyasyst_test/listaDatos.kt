@@ -2,7 +2,7 @@ package com.example.proyasyst_test
 
 class listaDatos {
     companion object{
-        val ListaSuperHeroes = listOf<variables>(
+        val ListaMedicamentos = listOf<variables>(
             variables(
                 "Paracetamol",
                 "10/10/2023",
