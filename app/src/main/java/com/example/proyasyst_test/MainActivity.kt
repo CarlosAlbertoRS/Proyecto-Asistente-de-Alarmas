@@ -11,9 +11,15 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         var bt1 = this.findViewById<Button>(R.id.btn_test)
+        var bt2 = this.findViewById<Button>(R.id.btn2)
 
         bt1.setOnClickListener {
             var intent = Intent(this, testeo::class.java)
+            startActivity(intent)
+        }
+
+        bt2.setOnClickListener {
+            var intent = Intent(this, basededatos::class.java)
             startActivity(intent)
         }
 
