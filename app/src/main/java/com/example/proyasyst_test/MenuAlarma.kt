@@ -18,6 +18,8 @@ class MenuAlarma : AppCompatActivity() {
 
         btnCancelar.setOnClickListener {
             startActivity(Intent(this, menu_principal::class.java))
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK)
+            finish();
         }
 
         val btnBorrar = findViewById<ImageButton>(R.id.btnBorrar)
