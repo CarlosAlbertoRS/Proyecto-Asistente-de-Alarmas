@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/Verde_BG"
-    tools:context=".Estricto">
+    android:scrollbarSize="4dp"
+    tools:context=".MenuAlarmaEstricto">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -22,16 +23,16 @@
         <TextView
             android:id="@+id/textView23"
             android:layout_width="match_parent"
-            android:layout_height="36dp" />
+            android:layout_height="wrap_content" />
 
         <ImageView
             android:id="@+id/imageView6"
             android:layout_width="match_parent"
-            android:layout_height="171dp"
+            android:layout_height="170dp"
             app:srcCompat="@drawable/reloj2" />
 
         <Switch
-            android:id="@+id/switchEstricto"
+            android:id="@+id/switchMAE"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="23dp"
@@ -54,7 +55,7 @@
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/switchEstricto"
+            app:layout_constraintTop_toBottomOf="@+id/switchMAE"
             tools:ignore="MissingConstraints" />
 
         <EditText
@@ -179,26 +180,37 @@
             android:orientation="horizontal">
 
             <ImageButton
-                android:id="@+id/btnAñadir"
+                android:id="@+id/btnEdit"
                 android:layout_width="52dp"
                 android:layout_height="54dp"
                 android:backgroundTint="#00FFFFFF"
                 android:contentDescription="TODO"
-                app:srcCompat="@drawable/edit2"
+                app:srcCompat="@drawable/edit"
                 tools:ignore="MissingConstraints,SpeakableTextPresentCheck" />
 
             <ImageButton
-                android:id="@+id/btnAtras"
+                android:id="@+id/btnBack"
                 android:layout_width="52dp"
                 android:layout_height="54dp"
+                android:layout_marginStart="80dp"
                 android:backgroundTint="#00FFFFFF"
-                android:layout_marginStart="100dp"
                 android:contentDescription="TODO"
                 app:srcCompat="@drawable/cancelar"
+                tools:ignore="MissingConstraints,SpeakableTextPresentCheck" />
+
+            <ImageButton
+                android:id="@+id/btnEliminar"
+                android:layout_width="52dp"
+                android:layout_height="54dp"
+                android:layout_marginStart="80dp"
+                android:backgroundTint="#00FFFFFF"
+                android:contentDescription="TODO"
+                app:srcCompat="@drawable/borrar"
                 tools:ignore="MissingConstraints,SpeakableTextPresentCheck" />
 
         </LinearLayout>
 
 
     </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

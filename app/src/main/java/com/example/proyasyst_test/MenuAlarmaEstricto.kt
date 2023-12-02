@@ -8,19 +8,18 @@ import android.widget.Switch
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 
-class MenuAlarma : AppCompatActivity() {
+class MenuAlarmaEstricto : AppCompatActivity() {
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_menu_alarma)
-
-        val btnCancelar = findViewById<ImageButton>(R.id.btnCancelar)
+        setContentView(R.layout.activity_menu_alarma_estricto)
+        val btnCancelar = findViewById<ImageButton>(R.id.btnBack)
 
         btnCancelar.setOnClickListener {
             startActivity(Intent(this, menu_principal::class.java))
         }
 
-        val btnBorrar = findViewById<ImageButton>(R.id.btnBorrar)
+        val btnBorrar = findViewById<ImageButton>(R.id.btnEliminar)
 
         btnBorrar.setOnClickListener {
             val alerta = AlertDialog.Builder(this)
@@ -40,24 +39,23 @@ class MenuAlarma : AppCompatActivity() {
             titulo.show()
         }
 
-        val btnSwitch = findViewById<Switch>(R.id.switchMenuAl)
+        val btnSwitch = findViewById<Switch>(R.id.switchMAE)
 
         btnSwitch.setOnClickListener {
             val alerta = AlertDialog.Builder(this)
 
 
-            alerta.setMessage("Este modo esta diseñado para brindar apoyo las 24hr. a partir del lapso especificado")
+            alerta.setMessage("Este modo esta diseñado para brindar apoyo en un lapso especificado")
                 .setCancelable(false)
                 .setPositiveButton("si") { dialog, which ->
-                    startActivity(Intent(this, Estricto::class.java))
+                    startActivity(Intent(this, agregar::class.java))
                 }
                 .setNegativeButton("Cancelar") { dialog, which ->
                     dialog.cancel()
-                    btnSwitch.isChecked
                 }
 
             val titulo = alerta.create()
-            titulo.setTitle("¿Deseas activar el modo estricto?")
+            titulo.setTitle("¿Deseas desactivar el modo estricto?")
             titulo.show()
         }
     }

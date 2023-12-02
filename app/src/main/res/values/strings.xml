@@ -46,4 +46,5 @@
     <string name="holis">Holis</string>
     <string name="Button">Holis</string>
     <string name="es_la_hora_de_tomar_tu_medicamento">Es la hora de tomar tu medicamento</string>
+    <string name="title_activity_menu_alarma_estricto">MenuAlarmaEstricto</string>
 </resources>
