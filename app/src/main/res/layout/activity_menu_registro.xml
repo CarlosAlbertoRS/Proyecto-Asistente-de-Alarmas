@@ -76,8 +76,8 @@
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerRegistros"
-            android:layout_width="376dp"
-            android:layout_height="508dp"
+            android:layout_width="378dp"
+            android:layout_height="489dp"
             android:background="#78B5A3">
 
         </androidx.recyclerview.widget.RecyclerView>
