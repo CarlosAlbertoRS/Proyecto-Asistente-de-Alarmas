@@ -105,8 +105,8 @@ class basededatos : AppCompatActivity() {
             if (cursor.moveToFirst()){
                 do {
                     binding.datosConsulta.append(cursor.getString(0).toString() + ": ")
-                    binding.datosConsulta.append(cursor.getString(1).toString()+ ", Fecha")
-                    binding.datosConsulta.append(cursor.getString(2).toString() + " , Medicamento")
+                    binding.datosConsulta.append(cursor.getString(1).toString()+ ", Fecha: ")
+                    binding.datosConsulta.append(cursor.getString(2).toString() + " , Medicamento: ")
                     binding.datosConsulta.append(cursor.getString(3).toString() + " Horas, ")
                     binding.datosConsulta.append(cursor.getString(4).toString()+ " Dias \n")
                     binding.datosConsulta.append(cursor.getString(5).toString()+ " Estado \n" )

@@ -46,5 +46,11 @@ class MainActivity : AppCompatActivity() {
         btnAlarmaEst.setOnClickListener {
             startActivity(Intent(this, MenuAlarmaEstricto ::class.java))
         }
+
+        val btnBDD = this.findViewById<Button>(R.id.button4)
+
+        btnBDD.setOnClickListener {
+            startActivity(Intent(this, MainActivity2::class.java))
+        }
     }
 }

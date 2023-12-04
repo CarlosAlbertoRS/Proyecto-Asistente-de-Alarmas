@@ -14,13 +14,11 @@ class MainActivity2 : AppCompatActivity() {
         var bt2 = this.findViewById<Button>(R.id.btn2)
 
         bt1.setOnClickListener {
-            var intent = Intent(this, testeo::class.java)
-            startActivity(intent)
+            startActivity(Intent(this, testeo::class.java))
         }
 
         bt2.setOnClickListener {
-            var intent = Intent(this, basededatos::class.java)
-            startActivity(intent)
+            startActivity(Intent(this, basededatos::class.java))
         }
 
     }

@@ -5,7 +5,6 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ImageButton
-import android.widget.TextView
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.proyasyst_test.adapter.adaptador
@@ -20,6 +19,7 @@ class MenuRegistro : AppCompatActivity() {
         binding = ActivityMenuRegistroBinding.inflate(layoutInflater)
         setContentView(binding.root)
         //initRecycleView()
+
 
         val btnVolver= findViewById<ImageButton>(R.id.btnVolver)
 
@@ -43,4 +43,5 @@ class MenuRegistro : AppCompatActivity() {
         Toast.makeText(this,medicina.medicamento,Toast.LENGTH_SHORT).show()
         Toast.makeText(this,medicina.estado,Toast.LENGTH_SHORT).show()
     }
+
 }
