@@ -22,7 +22,7 @@ class miSQLiteHelper(context: Context) : SQLiteOpenHelper(
                 ", d16 INTEGER, d17 INTEGER, d18 INTEGER, d19 INTEGER, d20 INTEGER" +
                 ", d21 INTEGER, d22 INTEGER, d23 INTEGER, d24 INTEGERº)"
 
-        db!!.execSQL(ordenCreacion)
+        //db!!.execSQL(ordenCreacion)
         db!!.execSQL(ordenCreacion2)
     }
 
@@ -104,13 +104,13 @@ class miSQLiteHelper(context: Context) : SQLiteOpenHelper(
         val values = ContentValues()
         values.put("medicamento", medicamento)
         // Actualizar el registro
-        db.update("alarma", values, "id = ?", arrayOf(java.lang.String.valueOf(id)))
+        db.update("alarmaEtricto", values, "id = ?", arrayOf(java.lang.String.valueOf(id)))
         db.close()
     }
 
     fun eliminarDato(id: Int){
         val db = this.writableDatabase
-        db.delete("alarma", "id = ?", arrayOf(id.toString()))
+        db.delete("alarmaEtricto", "id = ?", arrayOf(id.toString()))
         db.close()
     }
 
