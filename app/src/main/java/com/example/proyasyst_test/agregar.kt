@@ -48,6 +48,12 @@ class agregar : AppCompatActivity() {
             titulo.show()
         }
 
+        val btnAgregar = findViewById<ImageButton>(R.id.btnAgregar)
+
+        btnAgregar.setOnClickListener {
+
+        }
+
 
     }
 }

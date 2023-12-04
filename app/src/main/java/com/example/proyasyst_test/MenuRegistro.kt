@@ -5,6 +5,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ImageButton
+import android.widget.TextView
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.proyasyst_test.adapter.adaptador
@@ -18,7 +19,7 @@ class MenuRegistro : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMenuRegistroBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        initRecycleView()
+        //initRecycleView()
 
         val btnVolver= findViewById<ImageButton>(R.id.btnVolver)
 
