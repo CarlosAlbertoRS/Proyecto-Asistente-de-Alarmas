@@ -32,6 +32,7 @@ class basededatos : AppCompatActivity() {
         val txtId2 = findViewById<TextView>(R.id.txtId2)
         val txtMedicamentoActualizar2 = findViewById<TextView>(R.id.txtMedicamentoActualizar2)
         val btnEliminarregistro = findViewById<Button>(R.id.btnEliminarregistro)
+        val btnActualiarregistro = findViewById<Button>(R.id.btnActualiarregistro)
         val estado = 1
         val d1 = 1
         val d2 = 0
@@ -45,7 +46,7 @@ class basededatos : AppCompatActivity() {
         val fechaActual = calendar.time
         val formatoFecha = SimpleDateFormat("dd/MM/yyyy", Locale.getDefault())
         val fechaFormateada = formatoFecha.format(fechaActual)
-        val btnActualiarregistro = findViewById<Button>(R.id.btnActualiarregistro)
+
         fecha.text = fechaFormateada
 
 
@@ -104,8 +105,8 @@ class basededatos : AppCompatActivity() {
             if (cursor.moveToFirst()){
                 do {
                     binding.datosConsulta.append(cursor.getString(0).toString() + ": ")
-                    binding.datosConsulta.append(cursor.getString(1).toString()+ ", ")
-                    binding.datosConsulta.append(cursor.getString(2).toString() + " , ")
+                    binding.datosConsulta.append(cursor.getString(1).toString()+ ", Fecha")
+                    binding.datosConsulta.append(cursor.getString(2).toString() + " , Medicamento")
                     binding.datosConsulta.append(cursor.getString(3).toString() + " Horas, ")
                     binding.datosConsulta.append(cursor.getString(4).toString()+ " Dias \n")
                     binding.datosConsulta.append(cursor.getString(5).toString()+ " Estado \n" )
