@@ -40,5 +40,11 @@ class MainActivity : AppCompatActivity() {
         btnLogo.setOnClickListener {
             startActivity(Intent(this, logo::class.java))
         }
+
+        val btnAlarmaEst = this.findViewById<Button>(R.id.btnAlarmaEstricto)
+
+        btnAlarmaEst.setOnClickListener {
+            startActivity(Intent(this, MenuAlarmaEstricto ::class.java))
+        }
     }
 }

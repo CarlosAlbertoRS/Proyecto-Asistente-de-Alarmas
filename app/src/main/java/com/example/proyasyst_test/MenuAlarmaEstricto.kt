@@ -42,6 +42,7 @@ class MenuAlarmaEstricto : AppCompatActivity() {
         }
 
         val btnSwitch = findViewById<Switch>(R.id.switchMAE)
+        var modoEstrictoActivado = true
 
         btnSwitch.setOnClickListener {
             val alerta = AlertDialog.Builder(this)
@@ -50,10 +51,14 @@ class MenuAlarmaEstricto : AppCompatActivity() {
             alerta.setMessage("Este modo esta diseñado para brindar apoyo en un lapso especificado")
                 .setCancelable(false)
                 .setPositiveButton("si") { dialog, which ->
+                    modoEstrictoActivado = false
                     startActivity(Intent(this, agregar::class.java))
+                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK)
+                    finish();
                 }
                 .setNegativeButton("Cancelar") { dialog, which ->
                     dialog.cancel()
+                    btnSwitch.isChecked = modoEstrictoActivado // Restablecer el estado del Switch
                 }
 
             val titulo = alerta.create()

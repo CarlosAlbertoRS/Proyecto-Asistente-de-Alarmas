@@ -14,7 +14,7 @@ class MenuAlarma : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_menu_alarma)
 
-        val btnCancelar = findViewById<ImageButton>(R.id.btnCancelar)
+        val btnCancelar = findViewById<ImageButton>(R.id.btnRegresar)
 
         btnCancelar.setOnClickListener {
             startActivity(Intent(this, menu_principal::class.java))
@@ -43,19 +43,22 @@ class MenuAlarma : AppCompatActivity() {
         }
 
         val btnSwitch = findViewById<Switch>(R.id.switchMenuAl)
+        var modoEstrictoActivado = false
 
         btnSwitch.setOnClickListener {
             val alerta = AlertDialog.Builder(this)
 
-
             alerta.setMessage("Este modo esta diseñado para brindar apoyo las 24hr. a partir del lapso especificado")
                 .setCancelable(false)
                 .setPositiveButton("si") { dialog, which ->
+                    modoEstrictoActivado = true
                     startActivity(Intent(this, Estricto::class.java))
+                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK)
+                    finish();
                 }
                 .setNegativeButton("Cancelar") { dialog, which ->
                     dialog.cancel()
-                    btnSwitch.isChecked
+                    btnSwitch.isChecked = modoEstrictoActivado // Restablecer el estado del Switch
                 }
 
             val titulo = alerta.create()

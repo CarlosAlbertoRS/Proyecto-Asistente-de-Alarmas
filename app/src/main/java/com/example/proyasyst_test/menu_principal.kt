@@ -24,14 +24,18 @@ class menu_principal : AppCompatActivity() {
         initRecycleView()
 
         val btnMas= findViewById<ImageButton>(R.id.btnMas)
-        val btnRegistro = findViewById<ImageButton>(R.id.btnRegistro)
 
         btnMas.setOnClickListener {
             startActivity(Intent(this, agregar::class.java))
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK)
+            finish();
         }
 
+        val btnRegistro = findViewById<ImageButton>(R.id.btnRegistro)
         btnRegistro.setOnClickListener {
             startActivity(Intent(this, MenuRegistro::class.java))
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK)
+            finish();
         }
 
         val btnLlamada = findViewById<ImageButton>(R.id.btnLlamada)
@@ -58,6 +62,8 @@ class menu_principal : AppCompatActivity() {
         val btnExtra = findViewById<Button>(R.id.button2)
         btnExtra.setOnClickListener {
             startActivity(Intent(this, MainActivity::class.java))
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK)
+            finish();
         }
 
     }

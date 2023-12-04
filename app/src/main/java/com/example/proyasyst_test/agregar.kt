@@ -25,24 +25,29 @@ class agregar : AppCompatActivity() {
 
         val btnSwich = findViewById<Switch>(R.id.switchAgregar)
 
+        var modoEstrictoActivado = false // Variable para mantener el estado del modo estricto
+
         btnSwich.setOnClickListener {
             val alerta = AlertDialog.Builder(this)
 
-
-            alerta.setMessage("Este modo esta diseñado para brindar apoyo las 24hr. a partir del lapso especificado")
+            alerta.setMessage("Este modo está diseñado para brindar apoyo las 24 horas a partir del lapso especificado")
                 .setCancelable(false)
-                .setPositiveButton("si") { dialog, which ->
+                .setPositiveButton("Sí") { dialog, which ->
+                    modoEstrictoActivado = true
                     startActivity(Intent(this, Estricto::class.java))
+                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK)
+                    finish()
                 }
                 .setNegativeButton("Cancelar") { dialog, which ->
                     dialog.cancel()
-                    btnSwich.isChecked
+                    btnSwich.isChecked = modoEstrictoActivado // Restablecer el estado del Switch
                 }
 
             val titulo = alerta.create()
             titulo.setTitle("¿Deseas activar el modo estricto?")
             titulo.show()
         }
+
 
     }
 }
