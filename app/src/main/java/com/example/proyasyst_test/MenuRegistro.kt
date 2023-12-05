@@ -11,6 +11,8 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.proyasyst_test.adapter.adaptador
 import com.example.proyasyst_test.databinding.ActivityMenuRegistroBinding
 
+import android.database.sqlite.SQLiteDatabase
+
 class MenuRegistro : AppCompatActivity() {
 
     private lateinit var binding: ActivityMenuRegistroBinding
@@ -21,7 +23,7 @@ class MenuRegistro : AppCompatActivity() {
         setContentView(binding.root)
         //initRecycleView()
 
-
+        val alarmasBdHelper = miSQLiteHelper(this)
         val btnVolver= findViewById<ImageButton>(R.id.btnVolver)
 
         btnVolver.setOnClickListener {
@@ -30,14 +32,34 @@ class MenuRegistro : AppCompatActivity() {
             finish();
         }
 
-        val switch= findViewById<Switch>(R.id.switch2)
-
+        /*val switch= findViewById<Switch>(R.id.switch2)
+        var modoEstrictoActivado = false
         switch.setOnClickListener {isChecked ->
             if (isChecked.isActivated) {
                 switch.text = "Alarmas activas"
+                modoEstrictoActivado = true
             } else {
                 switch.text = "Alarmas finalizadas"
+                switch.isChecked = modoEstrictoActivado
             }
+        }*/
+
+        setContentView(R.layout.item_registro_activas)
+        //binding.recyclerRegistros.text = ""
+        val db : SQLiteDatabase = alarmasBdHelper.readableDatabase
+        val cursor =  db.rawQuery(
+            "SELECT * FROM alarma",
+            null)
+
+        if (cursor.moveToFirst()){
+            do {
+                binding.datosConsulta.append("   " + cursor.getString(0).toString() + ". ")
+                binding.fecha.append(" Fecha: " + cursor.getString(1).toString())
+                binding.datosConsulta.append( " , Medicamento: " + cursor.getString(2).toString())
+                binding.datosConsulta.append(cursor.getString(3).toString() + " Horas, ")
+                binding.datosConsulta.append(cursor.getString(4).toString()+ " Dias \n")
+                binding.datosConsulta.append(cursor.getString(5).toString()+ " Estado \n" )
+            }while (cursor.moveToNext())
         }
 
     }
