@@ -20,6 +20,7 @@ class Estricto : AppCompatActivity() {
             startActivity(Intent(this, menu_principal::class.java))
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK)
             finish();
+            overridePendingTransition(R.anim.fade_in,R.anim.fade_out)
         }
 
         val btnSwich = findViewById<Switch>(R.id.switchEstricto)
@@ -36,6 +37,7 @@ class Estricto : AppCompatActivity() {
                     startActivity(Intent(this, agregar::class.java))
                     intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK)
                     finish();
+                    overridePendingTransition(R.anim.fade_in,R.anim.fade_out)
                 }
                 .setNegativeButton("Cancelar") { dialog, which ->
                     dialog.cancel()

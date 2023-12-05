@@ -29,6 +29,7 @@ class menu_principal : AppCompatActivity() {
             startActivity(Intent(this, agregar::class.java))
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK)
             finish();
+            overridePendingTransition(R.anim.fade_in,R.anim.fade_out)
         }
 
         val btnRegistro = findViewById<ImageButton>(R.id.btnRegistro)
@@ -36,6 +37,7 @@ class menu_principal : AppCompatActivity() {
             startActivity(Intent(this, MenuRegistro::class.java))
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK)
             finish();
+            overridePendingTransition(R.anim.fade_in,R.anim.fade_out)
         }
 
         val btnLlamada = findViewById<ImageButton>(R.id.btnLlamada)
@@ -64,6 +66,7 @@ class menu_principal : AppCompatActivity() {
             startActivity(Intent(this, MainActivity::class.java))
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK)
             finish();
+            overridePendingTransition(R.anim.fade_in,R.anim.fade_out)
         }
 
     }

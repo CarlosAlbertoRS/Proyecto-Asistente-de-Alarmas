@@ -15,36 +15,42 @@ class MainActivity : AppCompatActivity() {
 
         btnRed.setOnClickListener {
             startActivity(Intent(this, menu_principal::class.java))
+            overridePendingTransition(R.anim.fade_in,R.anim.fade_out)
         }
 
         val btnEstricto = this.findViewById<Button>(R.id.btnEstricto)
 
         btnEstricto.setOnClickListener {
             startActivity(Intent(this, Estricto::class.java))
+            overridePendingTransition(R.anim.fade_in,R.anim.fade_out)
         }
 
         val btnAlarma = this.findViewById<Button>(R.id.btnAlarma)
 
         btnAlarma.setOnClickListener {
             startActivity(Intent(this, MenuAlarma::class.java))
+            overridePendingTransition(R.anim.fade_in,R.anim.fade_out)
         }
 
         val btnAlar = this.findViewById<Button>(R.id.btnAlar)
 
         btnAlar.setOnClickListener {
             startActivity(Intent(this, Alarma::class.java))
+            overridePendingTransition(R.anim.fade_in,R.anim.fade_out)
         }
 
         val btnLogo = this.findViewById<Button>(R.id.btnLogo)
 
         btnLogo.setOnClickListener {
             startActivity(Intent(this, logo::class.java))
+            overridePendingTransition(R.anim.fade_in,R.anim.fade_out)
         }
 
         val btnAlarmaEst = this.findViewById<Button>(R.id.btnAlarmaEstricto)
 
         btnAlarmaEst.setOnClickListener {
             startActivity(Intent(this, MenuAlarmaEstricto ::class.java))
+            overridePendingTransition(R.anim.fade_in,R.anim.fade_out)
         }
     }
 }

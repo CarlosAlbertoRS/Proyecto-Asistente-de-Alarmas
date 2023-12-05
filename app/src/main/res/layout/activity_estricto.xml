@@ -122,7 +122,7 @@
         <TextView
             android:id="@+id/textView25"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="41dp" />
 
         <TextView
             android:id="@+id/textView15"
@@ -170,7 +170,7 @@
         <TextView
             android:id="@+id/textView28"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="97dp" />
 
         <LinearLayout
             android:layout_width="match_parent"
