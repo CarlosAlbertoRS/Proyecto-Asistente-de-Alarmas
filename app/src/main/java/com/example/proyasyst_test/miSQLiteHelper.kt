@@ -16,13 +16,14 @@ class miSQLiteHelper(context: Context) : SQLiteOpenHelper(
         val ordenCreacion2 = "CREATE TABLE alarmaEstricto " +
                 "(id INTEGER PRIMARY KEY AUTOINCREMENT, " +
                 "fecha String, medicamento String, periodoHora INTEGER, periodoTratamiento INTEGER, " +
-                "estado INTEGER, d1 INTEGER, d2 INTEGER, d3 INTEGER, d4 INTEGER, d5 INTEGER" +
+                "estado INTEGER, tipoAlarma INTEGER," +
+                "d1 INTEGER, d2 INTEGER, d3 INTEGER, d4 INTEGER, d5 INTEGER" +
                 ", d6 INTEGER, d7 INTEGER, d8 INTEGER, d9 INTEGER, d10 INTEGER" +
                 ", d11 INTEGER, d12 INTEGER, d13 INTEGER, d14 INTEGER, d15 INTEGER" +
                 ", d16 INTEGER, d17 INTEGER, d18 INTEGER, d19 INTEGER, d20 INTEGER" +
                 ", d21 INTEGER, d22 INTEGER, d23 INTEGER, d24 INTEGERº)"
 
-        db!!.execSQL(ordenCreacion)
+        //db!!.execSQL(ordenCreacion)
         db!!.execSQL(ordenCreacion2)
     }
 
@@ -55,8 +56,8 @@ class miSQLiteHelper(context: Context) : SQLiteOpenHelper(
         db.close()
     }
 
-    fun anadirDato2( fecha: String, medicamento: String, periodoHora: Int, periodoTratamiento: Int, estado: Int, d1: Int
-                     , d2: Int, d3: Int, d4: Int, d5: Int, d6: Int, d7: Int, d8: Int, d9: Int, d10: Int, d11: Int
+    fun anadirDato2( fecha: String, medicamento: String, periodoHora: Int, periodoTratamiento: Int, estado: Int, tipoAlarma: Int,
+                     d1: Int, d2: Int, d3: Int, d4: Int, d5: Int, d6: Int, d7: Int, d8: Int, d9: Int, d10: Int, d11: Int
                      , d12: Int, d13: Int, d14: Int, d15: Int, d16: Int, d17: Int, d18: Int, d19: Int, d20: Int, d21: Int
                      , d22: Int, d23: Int, d24: Int) {
         val datos2 = ContentValues()
@@ -65,6 +66,7 @@ class miSQLiteHelper(context: Context) : SQLiteOpenHelper(
         datos2.put("periodoHora", periodoHora)
         datos2.put("periodoTratamiento", periodoTratamiento)
         datos2.put("estado", estado)
+        datos2.put("tipoAlarma",tipoAlarma)
         datos2.put("d1",d1)
         datos2.put("d2",d2)
         datos2.put("d3",d3)
@@ -102,15 +104,15 @@ class miSQLiteHelper(context: Context) : SQLiteOpenHelper(
     fun actualizar(id: Int, medicamento: String){
         val db = this.writableDatabase
         val values = ContentValues()
-        values.put("medicamento", medicamento)
+        values.put("estado", medicamento)
         // Actualizar el registro
-        db.update("alarma", values, "id = ?", arrayOf(java.lang.String.valueOf(id)))
+        db.update("alarmaEtricto+", values, "id = ?", arrayOf(java.lang.String.valueOf(id)))
         db.close()
     }
 
     fun eliminarDato(id: Int){
         val db = this.writableDatabase
-        db.delete("alarma", "id = ?", arrayOf(id.toString()))
+        db.delete("alarmaEtricto", "id = ?", arrayOf(id.toString()))
         db.close()
     }
 

@@ -15,6 +15,31 @@ class basededatos : AppCompatActivity() {
     private lateinit var binding: ActivityBasededatosBinding
     private lateinit var alarmasBdHelper: miSQLiteHelper
     private var id = 0
+    var d1 = 0
+    var d2 = 0
+    var d3 = 0
+    var d4 = 0
+    var d5 = 0
+    var d6 = 0
+    var d7 = 0
+    var d8 = 0
+    var d9 = 0
+    var d10 = 0
+    var d11 = 0
+    var d12 = 0
+    var d13 = 0
+    var d14 = 0
+    var d15 = 0
+    var d16 = 0
+    var d17 = 0
+    var d18 = 0
+    var d19 = 0
+    var d20 = 0
+    var d21 = 1
+    var d22 = 0
+    var d23 = 0
+    var d24 = 0
+    var tipoAlarma = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
 
@@ -34,11 +59,7 @@ class basededatos : AppCompatActivity() {
         val btnEliminarregistro = findViewById<Button>(R.id.btnEliminarregistro)
         val btnActualiarregistro = findViewById<Button>(R.id.btnActualiarregistro)
         val estado = 1
-        val d1 = 1
-        val d2 = 0
-        val d3 = 0
-        val d4 = 0
-        val d5 = 0
+
 
 
         val alarmasBdHelper = miSQLiteHelper(this)
@@ -57,24 +78,63 @@ class basededatos : AppCompatActivity() {
                 binding.txtPeriodoDeTiempo.text.isNotBlank() &&
                 binding.txtPeriodoDeTratamiento.text.isNotBlank())
             {
+                if(binding.txtPeriodoDeTiempo.toString().toInt() <= 5 && binding.txtPeriodoDeTiempo.toString().toInt() > 0){
+                    if(binding.txtPeriodoDeTiempo.toString().toInt() == 1){
+                        alarmasBdHelper.anadirDato2(
+                            fecha.text.toString(),
+                            txtMedicamento.text.toString(),
+                            txtIntervaloMedicamento.text.toString().toInt(),
+                            txteridoTratamiento.text.toString().toInt(),
+                            estado = 1,
+                            //colocar aqui el tipo de alarma
+                            tipoAlarma,
+                            d1, d2, d3, d4, d5, d6, d7, d8, d9, d10, d11, d12, 1, d14, d15, d16,d17, d18, d19, d20, d21,
+                            d22, d23, d24)
+                    }else if(binding.txtPeriodoDeTiempo.toString().toInt() == 2){
+                        alarmasBdHelper.anadirDato2(
+                            fecha.text.toString(),
+                            txtMedicamento.text.toString(),
+                            txtIntervaloMedicamento.text.toString().toInt(),
+                            txteridoTratamiento.text.toString().toInt(),
+                            estado = 1,
+                            tipoAlarma,
+                            d1, d2, d3, d4, d5, d6, d7, d8, d9, d10, 1, d12, 0, d14, d15, d16,d17, d18, d19, d20, d21,
+                            d22, 1, d24)
 
-                if (binding.switch1.isChecked == true){
-                    alarmasBdHelper.anadirDato(
-                        fecha.text.toString(),
-                        txtMedicamento.text.toString(),
-                        txtIntervaloMedicamento.text.toString().toInt(),
-                        txteridoTratamiento.text.toString().toInt(),
-                        estado = 1,
-                        d1, d2, d3, d4, d5)
-                }else
-                {
-                    alarmasBdHelper.anadirDato(
-                        fecha.text.toString(),
-                        txtMedicamento.text.toString(),
-                        txtIntervaloMedicamento.text.toString().toInt(),
-                        txteridoTratamiento.text.toString().toInt(),
-                        estado = 0,
-                        d1, d2, d3, d4, d5)
+                    }else if(binding.txtPeriodoDeTiempo.toString().toInt() == 3){
+                        alarmasBdHelper.anadirDato2(
+                            fecha.text.toString(),
+                            txtMedicamento.text.toString(),
+                            txtIntervaloMedicamento.text.toString().toInt(),
+                            txteridoTratamiento.text.toString().toInt(),
+                            estado = 1,
+                            tipoAlarma,
+                            d1, d2, d3, d4, d5, d6, d7, d8, 1, d10, d11,d12, d13, d14, d15, 1,d17, d18, d19, d20, d21,
+                            1, d23, d24)
+
+                    }else if(binding.txtPeriodoDeTiempo.toString().toInt() == 4){
+                        alarmasBdHelper.anadirDato2(
+                            fecha.text.toString(),
+                            txtMedicamento.text.toString(),
+                            txtIntervaloMedicamento.text.toString().toInt(),
+                            txteridoTratamiento.text.toString().toInt(),
+                            estado = 1,
+                            tipoAlarma,
+                            d1, d2, d3, d4, d5, d6, d7, d8, 1, d10, d11,d12, 1, d14, d15, d14 ,1, d18, d19, d20, 1,
+                            d22, d23, d24)
+
+                    }else if(binding.txtPeriodoDeTiempo.toString().toInt() == 5){
+                        alarmasBdHelper.anadirDato2(
+                            fecha.text.toString(),
+                            txtMedicamento.text.toString(),
+                            txtIntervaloMedicamento.text.toString().toInt(),
+                            txteridoTratamiento.text.toString().toInt(),
+                            estado = 1,
+                            tipoAlarma,
+                            d1, d2, d3, d4, d5, d6, d7, d8, 1, d10, d11,1, d13, d14, 1, d16,d17, 1, d19, d20, 1,
+                            d22, d23, d24)                    }
+                }else {
+                    Toast.makeText(this, "El numero maximo tiene que 5 ",Toast.LENGTH_SHORT).show()
                 }
 
                 //binding.fecha.text.toString(),
