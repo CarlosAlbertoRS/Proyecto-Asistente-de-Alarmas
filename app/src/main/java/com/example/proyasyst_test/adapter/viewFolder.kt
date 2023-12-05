@@ -12,12 +12,11 @@ class viewFolder (view: View) : RecyclerView.ViewHolder(view) {
 
     @SuppressLint("CheckResult")
     fun render(DatosMedicamentos: variables, onClickListener: (variables)->Unit) {
-        binding.medicamento.text = DatosMedicamentos.medicamento
+        binding.medicamento.text = DatosMedicamentos.nombre
         binding.fecha.text = DatosMedicamentos.fecha
-        binding.administrada.text = DatosMedicamentos.administrada
-        binding.total.text = DatosMedicamentos.total
+        binding.administrada.text = DatosMedicamentos.frecuencia
+        binding.total.text = DatosMedicamentos.periodoTotal
         binding.estado.text = DatosMedicamentos.estado
-        binding.tipo.text = DatosMedicamentos.tipo
         itemView.setOnClickListener{ onClickListener(DatosMedicamentos)}
     }
 }

@@ -1,10 +1,9 @@
 package com.example.proyasyst_test
 
-data class variables (
-    val medicamento: String,
+data class variables(
     val fecha: String,
-    val administrada: String,
-    val total: String,
-    val estado: String,
-    val tipo: String
+    val nombre: String,
+    val frecuencia: String,
+    val periodoTotal: String,
+    val estado: String
 )

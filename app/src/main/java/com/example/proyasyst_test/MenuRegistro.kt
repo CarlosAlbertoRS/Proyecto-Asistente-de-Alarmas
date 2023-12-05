@@ -1,80 +1,58 @@
 package com.example.proyasyst_test
 
-import android.annotation.SuppressLint
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ImageButton
-import android.widget.Switch
-import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.proyasyst_test.adapter.adaptador
+import androidx.recyclerview.widget.RecyclerView
+import com.example.proyasyst_test.adapter.MedicamentoAdapter
 import com.example.proyasyst_test.databinding.ActivityMenuRegistroBinding
-
-import android.database.sqlite.SQLiteDatabase
 
 class MenuRegistro : AppCompatActivity() {
 
     private lateinit var binding: ActivityMenuRegistroBinding
-    @SuppressLint("MissingInflatedId")
+    private lateinit var recyclerView: RecyclerView
+    private lateinit var adapter: MedicamentoAdapter
+    private lateinit var databaseHelper: DatabaseHelper
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMenuRegistroBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        //initRecycleView()
+        databaseHelper = DatabaseHelper(this)
+        initRecyclerView()
 
-        val alarmasBdHelper = miSQLiteHelper(this)
-        val btnVolver= findViewById<ImageButton>(R.id.btnVolver)
+        val btnVolver = findViewById<ImageButton>(R.id.btnVolver)
 
         btnVolver.setOnClickListener {
             startActivity(Intent(this, menu_principal::class.java))
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK)
-            finish();
+            finish()
         }
 
-        /*val switch= findViewById<Switch>(R.id.switch2)
-        var modoEstrictoActivado = false
-        switch.setOnClickListener {isChecked ->
-            if (isChecked.isActivated) {
-                switch.text = "Alarmas activas"
-                modoEstrictoActivado = true
-            } else {
-                switch.text = "Alarmas finalizadas"
-                switch.isChecked = modoEstrictoActivado
-            }
-        }*/
-
-        setContentView(R.layout.item_registro_activas)
-        //binding.recyclerRegistros.text = ""
-        val db : SQLiteDatabase = alarmasBdHelper.readableDatabase
-        val cursor =  db.rawQuery(
-            "SELECT * FROM alarma",
-            null)
-
-        if (cursor.moveToFirst()){
-            do {
-                binding.datosConsulta.append("   " + cursor.getString(0).toString() + ". ")
-                binding.fecha.append(" Fecha: " + cursor.getString(1).toString())
-                binding.datosConsulta.append( " , Medicamento: " + cursor.getString(2).toString())
-                binding.datosConsulta.append(cursor.getString(3).toString() + " Horas, ")
-                binding.datosConsulta.append(cursor.getString(4).toString()+ " Dias \n")
-                binding.datosConsulta.append(cursor.getString(5).toString()+ " Estado \n" )
-            }while (cursor.moveToNext())
-        }
-
+        // Llama a actualizarVista() cuando sea apropiado, por ejemplo, después de agregar o actualizar datos
+        actualizarVista()
     }
 
-    private fun initRecycleView() {
-        binding.recyclerRegistros.layoutManager = LinearLayoutManager(this)
-        binding.recyclerRegistros.adapter =
-            adaptador(listaDatos.ListaMedicamentos) { medicina ->
-                onItemSeleccionado(medicina)
-            }
+    private fun initRecyclerView() {
+        recyclerView = binding.recyclerRegistros
+        recyclerView.layoutManager = LinearLayoutManager(this)
+        val medicamentos = databaseHelper.obtenerMedicamentos()
+        adapter = MedicamentoAdapter(medicamentos)
+        recyclerView.adapter = adapter
+
+        adapter.notifyDataSetChanged()
     }
 
-    fun onItemSeleccionado(medicina: variables) {
-        Toast.makeText(this,medicina.medicamento,Toast.LENGTH_SHORT).show()
-        Toast.makeText(this,medicina.estado,Toast.LENGTH_SHORT).show()
-    }
+    // Función para actualizar la vista después de cambiar los datos en la base de datos
+    private fun actualizarVista() {
+        // Realiza las operaciones de cambio de datos en la base de datos
+        // Por ejemplo:
+        // databaseHelper.anadirDato("10/11/2023", "Nuevo Medicamento", 8, 30, 1, 0, 0, 0, 0, 0)
 
+        // Después de cambiar los datos, obtén los nuevos datos y notifica al adaptador
+        val nuevosMedicamentos = databaseHelper.obtenerMedicamentos()
+        adapter.actualizarDatos(nuevosMedicamentos)
+    }
 }

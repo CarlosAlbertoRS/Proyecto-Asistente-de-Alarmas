@@ -4,7 +4,6 @@ import android.annotation.SuppressLint
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageButton
 import android.widget.Switch
@@ -12,12 +11,10 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import com.example.proyasyst_test.databinding.ActivityAgregarBinding
-import com.example.proyasyst_test.databinding.ActivityBasededatosBinding
-import com.google.android.material.switchmaterial.SwitchMaterial
 import java.text.SimpleDateFormat
 import java.util.Calendar
 import java.util.Locale
-import android.database.sqlite.SQLiteDatabase
+
 
 class agregar : AppCompatActivity() {
     private lateinit var binding: ActivityAgregarBinding
@@ -44,7 +41,7 @@ class agregar : AppCompatActivity() {
         val d5 = 0
 
 
-        val alarmasBdHelper = miSQLiteHelper(this)
+        val alarmasBdHelper = DatabaseHelper(this)
         val calendar = Calendar.getInstance()
         val fechaActual = calendar.time
         val formatoFecha = SimpleDateFormat("dd/MM/yyyy", Locale.getDefault())
@@ -85,6 +82,7 @@ class agregar : AppCompatActivity() {
             titulo.show()
         }
 
+
         binding.btnAgregar.setOnClickListener {
 
             if (binding.txtMedic.text.isNotBlank() &&
@@ -92,16 +90,6 @@ class agregar : AppCompatActivity() {
                 binding.txtDias.text.isNotBlank())
             {
 
-                if (binding.switchAgregar.isChecked == true){
-                    alarmasBdHelper.anadirDato(
-                        fecha.text.toString(),
-                        txtMedicamento.text.toString(),
-                        txtIntervaloMedicamento.text.toString().toInt(),
-                        txteridoTratamiento.text.toString().toInt(),
-                        estado = 1,
-                        d1, d2, d3, d4, d5)
-                }else
-                {
                     alarmasBdHelper.anadirDato(
                         fecha.text.toString(),
                         txtMedicamento.text.toString(),
@@ -109,7 +97,6 @@ class agregar : AppCompatActivity() {
                         txteridoTratamiento.text.toString().toInt(),
                         estado = 0,
                         d1, d2, d3, d4, d5)
-                }
 
                 //Limpia todos los campos
                 binding.txtMedic.text.clear()
@@ -120,6 +107,7 @@ class agregar : AppCompatActivity() {
             {
                 Toast.makeText(this, "Los campos estan vacios, por favor rellenelos", Toast.LENGTH_SHORT).show()
             }
+
         }
 
 
