@@ -5,6 +5,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ImageButton
+import android.widget.Switch
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.proyasyst_test.adapter.adaptador
@@ -27,6 +28,16 @@ class MenuRegistro : AppCompatActivity() {
             startActivity(Intent(this, menu_principal::class.java))
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK)
             finish();
+        }
+
+        val switch= findViewById<Switch>(R.id.switch2)
+
+        switch.setOnClickListener {isChecked ->
+            if (isChecked.isActivated) {
+                switch.text = "Alarmas activas"
+            } else {
+                switch.text = "Alarmas finalizadas"
+            }
         }
 
     }
