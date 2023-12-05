@@ -14,10 +14,9 @@ class viewFolder (view: View) : RecyclerView.ViewHolder(view) {
     fun render(DatosMedicamentos: variables, onClickListener: (variables)->Unit) {
         binding.medicamento.text = DatosMedicamentos.medicamento
         binding.fecha.text = DatosMedicamentos.fecha
-        binding.administrada.text = DatosMedicamentos.administrada
+        binding.intervalo.text = DatosMedicamentos.intervalo
         binding.total.text = DatosMedicamentos.total
         binding.estado.text = DatosMedicamentos.estado
-        binding.tipo.text = DatosMedicamentos.tipo
         itemView.setOnClickListener{ onClickListener(DatosMedicamentos)}
     }
 }

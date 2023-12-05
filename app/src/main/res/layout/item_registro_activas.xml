@@ -51,14 +51,14 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/administrada"
+            android:id="@+id/intervalo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:text="Periodo administrada: 7 dias"
+            android:layout_marginTop="4dp"
+            android:text="Cada: 8 Horas"
             android:textSize="16sp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.119"
+            app:layout_constraintHorizontal_bias="0.071"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView12" />
 
@@ -74,7 +74,7 @@
             app:layout_constraintEnd_toStartOf="@+id/imagen"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/administrada" />
+            app:layout_constraintTop_toBottomOf="@+id/intervalo" />
 
         <TextView
             android:id="@+id/textView22"

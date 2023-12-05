@@ -21,7 +21,7 @@ class MenuRegistro : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMenuRegistroBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        //initRecycleView()
+        initRecycleView()
 
         val alarmasBdHelper = miSQLiteHelper(this)
         val btnVolver= findViewById<ImageButton>(R.id.btnVolver)
@@ -43,24 +43,6 @@ class MenuRegistro : AppCompatActivity() {
                 switch.isChecked = modoEstrictoActivado
             }
         }*/
-
-        setContentView(R.layout.item_registro_activas)
-        //binding.recyclerRegistros.text = ""
-        val db : SQLiteDatabase = alarmasBdHelper.readableDatabase
-        val cursor =  db.rawQuery(
-            "SELECT * FROM alarma",
-            null)
-
-        if (cursor.moveToFirst()){
-            do {
-                binding.datosConsulta.append("   " + cursor.getString(0).toString() + ". ")
-                binding.fecha.append(" Fecha: " + cursor.getString(1).toString())
-                binding.datosConsulta.append( " , Medicamento: " + cursor.getString(2).toString())
-                binding.datosConsulta.append(cursor.getString(3).toString() + " Horas, ")
-                binding.datosConsulta.append(cursor.getString(4).toString()+ " Dias \n")
-                binding.datosConsulta.append(cursor.getString(5).toString()+ " Estado \n" )
-            }while (cursor.moveToNext())
-        }
 
     }
 
