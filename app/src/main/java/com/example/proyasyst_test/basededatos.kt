@@ -60,8 +60,8 @@ class basededatos : AppCompatActivity() {
         setContentView(binding.root)
 
 
-        val formato = "HH:mm:ss"
-        val estado = 1
+        //val formato = "HH:mm:ss"
+        //val estado = 1
 
 
 
@@ -216,8 +216,8 @@ class basededatos : AppCompatActivity() {
                             txteridoTratamiento.text.toString().toInt(),
                             estado = 1,
                             tipoAlarma,
-                            d1, d2, d3, d4, d5, d6, d7, d8, 1, d10, d11,d12, d13, d14, d15, 1,d17, d18, d19, d20, d21,
-                            0   , d23, 1)}
+                            1, d2, d3, d4, d5, d6, d7, d8, 0, d10, d11,d12, d13, d14, d15, 0,d17, d18, d19, d20, d21,
+                            0   , d23, 0)}
                     1 -> { d2 = 1
                         alarmasBdHelper.anadirDato2(
                             fecha.text.toString(),
@@ -226,8 +226,8 @@ class basededatos : AppCompatActivity() {
                             txteridoTratamiento.text.toString().toInt(),
                             estado = 1,
                             tipoAlarma,
-                            d1, d2, d3, d4, d5, d6, d7, d8, 1, d10, d11,d12, d13, d14, d15, 1,d17, d18, d19, d20, d21,
-                            1, d23, d24)}
+                            0, 1, d3, d4, d5, d6, d7, d8, 0, d10, d11,d12, d13, d14, d15, 0,d17, d18, d19, d20, d21,
+                            0, d23, d24)}
                     2 -> { d3 = 1
                         alarmasBdHelper.anadirDato2(
                             fecha.text.toString(),
@@ -236,8 +236,8 @@ class basededatos : AppCompatActivity() {
                             txteridoTratamiento.text.toString().toInt(),
                             estado = 1,
                             tipoAlarma,
-                            d1, d2, d3, d4, d5, d6, d7, d8, 1, d10, d11,d12, d13, d14, d15, 1,d17, d18, d19, d20, d21,
-                            1, d23, d24)}
+                            d1, 0,1, d4, d5, d6, d7, d8, 0, d10, d11,d12, d13, d14, d15, 0,d17, d18, d19, d20, d21,
+                            0, d23, d24)}
                     3 -> { d4 = 1
                         alarmasBdHelper.anadirDato2(
                             fecha.text.toString(),
@@ -246,8 +246,8 @@ class basededatos : AppCompatActivity() {
                             txteridoTratamiento.text.toString().toInt(),
                             estado = 1,
                             tipoAlarma,
-                            d1, d2, d3, d4, d5, d6, d7, d8, 1, d10, d11,d12, d13, d14, d15, 1,d17, d18, d19, d20, d21,
-                            1, d23, d24)}
+                            d1, d2, 0, 1, d5, d6, d7, d8, 0, d10, d11,d12, d13, d14, d15, 0,d17, d18, d19, d20, d21,
+                            0, d23, d24)}
                     4 -> { d5 = 1
                         alarmasBdHelper.anadirDato2(
                             fecha.text.toString(),
@@ -256,8 +256,8 @@ class basededatos : AppCompatActivity() {
                             txteridoTratamiento.text.toString().toInt(),
                             estado = 1,
                             tipoAlarma,
-                            d1, d2, d3, d4, d5, d6, d7, d8, 1, d10, d11,d12, d13, d14, d15, 1,d17, d18, d19, d20, d21,
-                            1, d23, d24)}
+                            d1, d2, d3, d4, 1, d6, d7, d8, 0, d10, d11,d12, d13, d14, d15, 0,d17, d18, d19, d20, d21,
+                            0, d23, d24)}
                     5 -> { d6 = 1
                         alarmasBdHelper.anadirDato2(
                             fecha.text.toString(),
@@ -266,8 +266,8 @@ class basededatos : AppCompatActivity() {
                             txteridoTratamiento.text.toString().toInt(),
                             estado = 1,
                             tipoAlarma,
-                            d1, d2, d3, d4, d5, d6, d7, d8, 1, d10, d11,d12, d13, d14, d15, 1,d17, d18, d19, d20, d21,
-                            1, d23, d24)}
+                            d1, d2, d3, d4, d5, 1, d7, d8, 0, d10, d11,d12, d13, d14, d15, 0,d17, d18, d19, d20, d21,
+                            0, d23, d24)}
                     6 -> { d7 = 1
                         alarmasBdHelper.anadirDato2(
                             fecha.text.toString(),
@@ -276,8 +276,8 @@ class basededatos : AppCompatActivity() {
                             txteridoTratamiento.text.toString().toInt(),
                             estado = 1,
                             tipoAlarma,
-                            d1, d2, d3, d4, d5, d6, d7, d8, 1, d10, d11,d12, d13, d14, d15, 1,d17, d18, d19, d20, d21,
-                            1, d23, d24)}
+                            d1, d2, d3, d4, d5, d6, 1, d8, 0, d10, d11,d12, d13, d14, d15, 0,d17, d18, d19, d20, d21,
+                            0, d23, d24)}
                     7 -> { d8 = 1
                         alarmasBdHelper.anadirDato2(
                             fecha.text.toString(),
@@ -286,8 +286,8 @@ class basededatos : AppCompatActivity() {
                             txteridoTratamiento.text.toString().toInt(),
                             estado = 1,
                             tipoAlarma,
-                            d1, d2, d3, d4, d5, d6, d7, d8, 1, d10, d11,d12, d13, d14, d15, 1,d17, d18, d19, d20, d21,
-                            1, d23, d24)}
+                            d1, d2, d3, d4, d5, d6, d7, 1, 0, d10, d11,d12, d13, d14, d15, 0,d17, d18, d19, d20, d21,
+                            0, d23, d24)}
                     8 -> { d9 = 1
                         alarmasBdHelper.anadirDato2(
                             fecha.text.toString(),
@@ -296,8 +296,8 @@ class basededatos : AppCompatActivity() {
                             txteridoTratamiento.text.toString().toInt(),
                             estado = 1,
                             tipoAlarma,
-                            d1, d2, d3, d4, d5, d6, d7, d8, 1, d10, d11,d12, d13, d14, d15, 1,d17, d18, d19, d20, d21,
-                            1, d23, d24)}
+                            d1, d2, d3, d4, d5, d6, d7, d8, 1, d10, d11,d12, d13, d14, d15, 0,d17, d18, d19, d20, d21,
+                            0, d23, d24)}
                     9 -> { d10 = 1
                         alarmasBdHelper.anadirDato2(
                             fecha.text.toString(),
@@ -306,8 +306,8 @@ class basededatos : AppCompatActivity() {
                             txteridoTratamiento.text.toString().toInt(),
                             estado = 1,
                             tipoAlarma,
-                            d1, d2, d3, d4, d5, d6, d7, d8, 1, d10, d11,d12, d13, d14, d15, 1,d17, d18, d19, d20, d21,
-                            1, d23, d24)}
+                            d1, d2, d3, d4, d5, d6, d7, d8, 0, 1, d11,d12, d13, d14, d15, 0,d17, d18, d19, d20, d21,
+                            0, d23, d24)}
                     10 -> { d11 = 1
                         alarmasBdHelper.anadirDato2(
                             fecha.text.toString(),
@@ -316,8 +316,8 @@ class basededatos : AppCompatActivity() {
                             txteridoTratamiento.text.toString().toInt(),
                             estado = 1,
                             tipoAlarma,
-                            d1, d2, d3, d4, d5, d6, d7, d8, 1, d10, d11,d12, d13, d14, d15, 1,d17, d18, d19, d20, d21,
-                            1, d23, d24)}
+                            d1, d2, d3, d4, d5, d6, d7, d8, 0, d10, 1,d12, d13, d14, d15, 0,d17, d18, d19, d20, d21,
+                            0, d23, d24)}
                     11 -> { d12 = 1
                         alarmasBdHelper.anadirDato2(
                             fecha.text.toString(),
@@ -326,8 +326,8 @@ class basededatos : AppCompatActivity() {
                             txteridoTratamiento.text.toString().toInt(),
                             estado = 1,
                             tipoAlarma,
-                            d1, d2, d3, d4, d5, d6, d7, d8, 1, d10, d11,d12, d13, d14, d15, 1,d17, d18, d19, d20, d21,
-                            1, d23, d24)}
+                            d1, d2, d3, d4, d5, d6, d7, d8, 0, d10, d11,1, d13, d14, d15, 0,d17, d18, d19, d20, d21,
+                            0, d23, d24)}
                     12 -> { d13 = 1
                         alarmasBdHelper.anadirDato2(
                             fecha.text.toString(),
@@ -336,8 +336,8 @@ class basededatos : AppCompatActivity() {
                             txteridoTratamiento.text.toString().toInt(),
                             estado = 1,
                             tipoAlarma,
-                            d1, d2, d3, d4, d5, d6, d7, d8, 1, d10, d11,d12, d13, d14, d15, 1,d17, d18, d19, d20, d21,
-                            1, d23, d24)}
+                            d1, d2, d3, d4, d5, d6, d7, d8, 0, d10, d11,d12, 1, d14, d15, 0,d17, d18, d19, d20, d21,
+                            0, d23, d24)}
                     13 -> { d14 = 1
                         alarmasBdHelper.anadirDato2(
                             fecha.text.toString(),
@@ -346,8 +346,8 @@ class basededatos : AppCompatActivity() {
                             txteridoTratamiento.text.toString().toInt(),
                             estado = 1,
                             tipoAlarma,
-                            d1, d2, d3, d4, d5, d6, d7, d8, 1, d10, d11,d12, d13, d14, d15, 1,d17, d18, d19, d20, d21,
-                            1, d23, d24)}
+                            d1, d2, d3, d4, d5, d6, d7, d8, 0, d10, d11,d12, d13, 1, d15, 0,d17, d18, d19, d20, d21,
+                            0, d23, d24)}
                     14 -> { d15 = 1
                         alarmasBdHelper.anadirDato2(
                             fecha.text.toString(),
@@ -356,8 +356,8 @@ class basededatos : AppCompatActivity() {
                             txteridoTratamiento.text.toString().toInt(),
                             estado = 1,
                             tipoAlarma,
-                            d1, d2, d3, d4, d5, d6, d7, d8, 1, d10, d11,d12, d13, d14, d15, 1,d17, d18, d19, d20, d21,
-                            1, d23, d24)}
+                            d1, d2, d3, d4, d5, d6, d7, d8, 0, d10, d11,d12, d13, d14, 1, 0,d17, d18, d19, d20, d21,
+                            0, d23, d24)}
                     15 -> { d16 = 1
                         alarmasBdHelper.anadirDato2(
                             fecha.text.toString(),
@@ -366,8 +366,8 @@ class basededatos : AppCompatActivity() {
                             txteridoTratamiento.text.toString().toInt(),
                             estado = 1,
                             tipoAlarma,
-                            d1, d2, d3, d4, d5, d6, d7, d8, 1, d10, d11,d12, d13, d14, d15, 1,d17, d18, d19, d20, d21,
-                            1, d23, d24)}
+                            d1, d2, d3, d4, d5, d6, d7, d8, 0, d10, d11,d12, d13, d14, d15, 1,d17, d18, d19, d20, d21,
+                            0, d23, d24)}
                     16 -> { d17 = 1
                         alarmasBdHelper.anadirDato2(
                             fecha.text.toString(),
@@ -376,8 +376,8 @@ class basededatos : AppCompatActivity() {
                             txteridoTratamiento.text.toString().toInt(),
                             estado = 1,
                             tipoAlarma,
-                            d1, d2, d3, d4, d5, d6, d7, d8, 1, d10, d11,d12, d13, d14, d15, 1,d17, d18, d19, d20, d21,
-                            1, d23, d24)}
+                            d1, d2, d3, d4, d5, d6, d7, d8, 0, d10, d11,d12, d13, d14, d15, 0,1, d18, d19, d20, d21,
+                            0, d23, d24)}
                     17 -> { d18 = 1
                         alarmasBdHelper.anadirDato2(
                             fecha.text.toString(),
@@ -386,8 +386,8 @@ class basededatos : AppCompatActivity() {
                             txteridoTratamiento.text.toString().toInt(),
                             estado = 1,
                             tipoAlarma,
-                            d1, d2, d3, d4, d5, d6, d7, d8, 1, d10, d11,d12, d13, d14, d15, 1,d17, d18, d19, d20, d21,
-                            1, d23, d24)}
+                            d1, d2, d3, d4, d5, d6, d7, d8, 0, d10, d11,d12, d13, d14, d15, 0,d17, 1, d19, d20, d21,
+                            0, d23, d24)}
                     18 -> { d19 = 1
                         alarmasBdHelper.anadirDato2(
                             fecha.text.toString(),
@@ -396,8 +396,8 @@ class basededatos : AppCompatActivity() {
                             txteridoTratamiento.text.toString().toInt(),
                             estado = 1,
                             tipoAlarma,
-                            d1, d2, d3, d4, d5, d6, d7, d8, 1, d10, d11,d12, d13, d14, d15, 1,d17, d18, d19, d20, d21,
-                            1, d23, d24)}
+                            d1, d2, d3, d4, d5, d6, d7, d8, 0, d10, d11,d12, d13, d14, d15, 0,d17, d18, 1, d20, d21,
+                            0, d23, d24)}
                     19 -> { d20 = 1
                         alarmasBdHelper.anadirDato2(
                             fecha.text.toString(),
@@ -406,8 +406,8 @@ class basededatos : AppCompatActivity() {
                             txteridoTratamiento.text.toString().toInt(),
                             estado = 1,
                             tipoAlarma,
-                            d1, d2, d3, d4, d5, d6, d7, d8, 1, d10, d11,d12, d13, d14, d15, 1,d17, d18, d19, d20, d21,
-                            1, d23, d24)}
+                            d1, d2, d3, d4, d5, d6, d7, d8, 0, d10, d11,d12, d13, d14, d15, 0,d17, d18, d19, 1, d21,
+                            0, d23, d24)}
                     20 -> { d21 = 1
                         alarmasBdHelper.anadirDato2(
                             fecha.text.toString(),
@@ -416,8 +416,8 @@ class basededatos : AppCompatActivity() {
                             txteridoTratamiento.text.toString().toInt(),
                             estado = 1,
                             tipoAlarma,
-                            d1, d2, d3, d4, d5, d6, d7, d8, 1, d10, d11,d12, d13, d14, d15, 1,d17, d18, d19, d20, d21,
-                            1, d23, d24)}
+                            d1, d2, d3, d4, d5, d6, d7, d8, 0, d10, d11,d12, d13, d14, d15, 0,d17, d18, d19, d20, 1,
+                            0, d23, d24)}
                     21 -> { d22 = 1
                         alarmasBdHelper.anadirDato2(
                             fecha.text.toString(),
@@ -426,7 +426,7 @@ class basededatos : AppCompatActivity() {
                             txteridoTratamiento.text.toString().toInt(),
                             estado = 1,
                             tipoAlarma,
-                            d1, d2, d3, d4, d5, d6, d7, d8, 1, d10, d11,d12, d13, d14, d15, 1,d17, d18, d19, d20, d21,
+                            d1, d2, d3, d4, d5, d6, d7, d8, 0, d10, d11,d12, d13, d14, d15, 0,d17, d18, d19, d20, d21,
                             1, d23, d24)}
                     22 -> { d23 = 1
                         alarmasBdHelper.anadirDato2(
@@ -436,8 +436,8 @@ class basededatos : AppCompatActivity() {
                             txteridoTratamiento.text.toString().toInt(),
                             estado = 1,
                             tipoAlarma,
-                            d1, d2, d3, d4, d5, d6, d7, d8, 1, d10, d11,d12, d13, d14, d15, 1,d17, d18, d19, d20, d21,
-                            1, d23, d24)}
+                            d1, d2, d3, d4, d5, d6, d7, d8, 0, d10, d11,d12, d13, d14, d15, 0,d17, d18, d19, d20, d21,
+                            0, 1, d24)}
                     23 -> { d24 = 1
                         alarmasBdHelper.anadirDato2(
                             fecha.text.toString(),
@@ -446,8 +446,8 @@ class basededatos : AppCompatActivity() {
                             txteridoTratamiento.text.toString().toInt(),
                             estado = 1,
                             tipoAlarma,
-                            d1, d2, d3, d4, d5, d6, d7, d8, 1, d10, d11,d12, d13, d14, d15, 1,d17, d18, d19, d20, d21,
-                            1, d23, d24)}
+                            d1, d2, d3, d4, d5, d6, d7, d8, 0, d10, d11,d12, d13, d14, d15, 0,d17, d18, d19, d20, d21,
+                            0, d23, 1)}
                 }
 
                 i += binding.txtPeriodoDeTiempo.toString().toInt()

@@ -104,7 +104,7 @@ class miSQLiteHelper(context: Context) : SQLiteOpenHelper(
     fun actualizar(id: Int, medicamento: String){
         val db = this.writableDatabase
         val values = ContentValues()
-        values.put("medicamento", medicamento)
+        values.put("estado", medicamento)
         // Actualizar el registro
         db.update("alarmaEtricto+", values, "id = ?", arrayOf(java.lang.String.valueOf(id)))
         db.close()
