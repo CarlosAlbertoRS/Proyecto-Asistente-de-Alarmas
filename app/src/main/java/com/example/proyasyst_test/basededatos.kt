@@ -196,6 +196,8 @@ class basededatos : AppCompatActivity() {
 
     }
 
+    //Lo que contiene este metodo se debe de colocar dentro de la vetnana de creacion de alarmas
+    //del modo estricto.
     fun agregarDatosEstricto(){
         var i = 0
         tipoAlarma = 1;
