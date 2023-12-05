@@ -46,13 +46,10 @@ class agregar : AppCompatActivity() {
     var d22 = 0
     var d23 = 0
     var d24 = 0
-    var tipoAlarma = 0
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_agregar)
-
-        ///////////////////////////////////////////////////////////////////////////////////////////
 
         binding = ActivityAgregarBinding.inflate(layoutInflater)
         setContentView(binding.root)
@@ -61,10 +58,6 @@ class agregar : AppCompatActivity() {
         val txtMedicamento = findViewById<EditText>(R.id.txtMedic)
         val txtIntervaloMedicamento = findViewById<EditText>(R.id.txtHoras)
         val txteridoTratamiento = findViewById<EditText>(R.id.txtDias)
-
-        val estado = 1
-
-
         val alarmasBdHelper = miSQLiteHelper(this)
         val calendar = Calendar.getInstance()
         val fechaActual = calendar.time
@@ -74,8 +67,6 @@ class agregar : AppCompatActivity() {
         fecha.text = fechaFormateada
         fecha.text = fecha.text.toString()
 
-        /////////////////////////////////////////////////////////////////////////////////////////////
-
         val btnCancelar = findViewById<ImageButton>(R.id.btnCancelar)
         btnCancelar.setOnClickListener {
             startActivity(Intent(this, menu_principal::class.java))
@@ -84,7 +75,7 @@ class agregar : AppCompatActivity() {
         }
 
         val btnSwich = findViewById<Switch>(R.id.switchAgregar)
-        var modoEstrictoActivado = false // Variable para mantener el estado del modo estricto
+        var modoEstrictoActivado = false
         btnSwich.setOnClickListener {
             val alerta = AlertDialog.Builder(this)
 
@@ -98,7 +89,7 @@ class agregar : AppCompatActivity() {
                 }
                 .setNegativeButton("Cancelar") { dialog, which ->
                     dialog.cancel()
-                    btnSwich.isChecked = modoEstrictoActivado // Restablecer el estado del Switch
+                    btnSwich.isChecked = modoEstrictoActivado
                 }
 
             val titulo = alerta.create()
@@ -122,7 +113,6 @@ class agregar : AppCompatActivity() {
                             txtIntervaloMedicamento.text.toString().toInt(),
                             txteridoTratamiento.text.toString().toInt(),
                             1,
-                            //colocar aqui el tipo de alarma
                              0,
                             d1, d2, d3, d4, d5, d6, d7, d8, d9, d10, d11, d12, 1, d14, d15, d16,d17, d18, d19, d20, d21,
                             d22, d23, d24)
@@ -141,7 +131,6 @@ class agregar : AppCompatActivity() {
                             0,
                             d1, d2, d3, d4, d5, d6, d7, d8, d9, d10, 1, d12, 0, d14, d15, d16,d17, d18, d19, d20, d21,
                             d22, 1, d24)
-                        //Limpia todos los campos
                         txtMedicamento.text.clear()
                         txtIntervaloMedicamento.text.clear()
                         txteridoTratamiento.text.clear()
@@ -157,7 +146,6 @@ class agregar : AppCompatActivity() {
                             0,
                             d1, d2, d3, d4, d5, d6, d7, d8, 1, d10, d11,d12, d13, d14, d15, 1,d17, d18, d19, d20, d21,
                             1, d23, d24)
-                        //Limpia todos los campos
                         txtMedicamento.text.clear()
                         txtIntervaloMedicamento.text.clear()
                         txteridoTratamiento.text.clear()
@@ -173,7 +161,6 @@ class agregar : AppCompatActivity() {
                             0,
                             d1, d2, d3, d4, d5, d6, d7, d8, 1, d10, d11,d12, 1, d14, d15, d14 ,1, d18, d19, d20, 1,
                             d22, d23, d24)
-                        //Limpia todos los campos
                         txtMedicamento.text.clear()
                         txtIntervaloMedicamento.text.clear()
                         txteridoTratamiento.text.clear()
@@ -189,7 +176,6 @@ class agregar : AppCompatActivity() {
                             0,
                             d1, d2, d3, d4, d5, d6, d7, d8, 1, d10, d11,1, d13, d14, 1, d16,d17, 1, d19, d20, 1,
                             d22, d23, d24)
-                        //Limpia todos los campos
                         txtMedicamento.text.clear()
                         txtIntervaloMedicamento.text.clear()
                         txteridoTratamiento.text.clear()

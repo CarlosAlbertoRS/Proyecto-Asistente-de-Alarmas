@@ -14,9 +14,6 @@ import java.util.Calendar
 import java.util.Locale
 
 class Estricto : AppCompatActivity() {
-
-    //private lateinit var alarmasBdHelper: miSQLiteHelper
-
     var d1 = 0
     var d2 = 0
     var d3 = 0
@@ -41,7 +38,6 @@ class Estricto : AppCompatActivity() {
     var d22 = 0
     var d23 = 0
     var d24 = 0
-    var tipoAlarma = 0;
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

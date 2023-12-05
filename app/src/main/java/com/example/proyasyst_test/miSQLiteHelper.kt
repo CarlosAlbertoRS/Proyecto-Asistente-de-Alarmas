@@ -8,11 +8,6 @@ import android.database.sqlite.SQLiteOpenHelper
 class miSQLiteHelper(context: Context) : SQLiteOpenHelper(
     context, "alarmasasyst.db", null, 4) {
     override fun onCreate(db: SQLiteDatabase?) {
-        val ordenCreacion = "CREATE TABLE alarma " +
-                "(id INTEGER PRIMARY KEY AUTOINCREMENT, " +
-                "fecha String, medicamento String, periodoHora INTEGER, periodoTratamiento INTEGER, " +
-                "estado INTEGER, d1 INTEGER, d2 INTEGER, d3 INTEGER, d4 INTEGER, d5 INTEGER)"
-
         val ordenCreacion2 = "CREATE TABLE alarmaEstricto " +
                 "(id INTEGER PRIMARY KEY AUTOINCREMENT, " +
                 "fecha String, medicamento String, periodoHora INTEGER, periodoTratamiento INTEGER, " +
@@ -23,15 +18,11 @@ class miSQLiteHelper(context: Context) : SQLiteOpenHelper(
                 ", d16 INTEGER, d17 INTEGER, d18 INTEGER, d19 INTEGER, d20 INTEGER" +
                 ", d21 INTEGER, d22 INTEGER, d23 INTEGER, d24 INTEGERº)"
 
-        //db!!.execSQL(ordenCreacion)
         db!!.execSQL(ordenCreacion2)
     }
 
     override fun onUpgrade(db: SQLiteDatabase?, oldVersion: Int, newVersion: Int) {
-        val ordenBorrado = "DROP TABLE IF EXISTS alarma"
         val ordenBorrado2 = "DROP TABLE IF EXISTS alarmaEstricto"
-
-        db!!.execSQL(ordenBorrado)
         db!!.execSQL(ordenBorrado2)
         onCreate(db)
     }
@@ -78,14 +69,6 @@ class miSQLiteHelper(context: Context) : SQLiteOpenHelper(
         db.close()
     }
 
-    fun borrarBaseDatos(){
-        val db = this.writableDatabase
-        val ordenBorrado = "DROP TABLE alarmaEstricto"
-        db!!.execSQL(ordenBorrado)
-
-        onCreate(db)
-    }
-
     fun actualizar(id: Int, estado: Int){
         val db = this.writableDatabase
         val values = ContentValues()
@@ -93,10 +76,6 @@ class miSQLiteHelper(context: Context) : SQLiteOpenHelper(
         // Actualizar el registro
         db.update("alarmaEtricto+", values, "id = ?", arrayOf(java.lang.String.valueOf(id)))
         db.close()
-    }
-
-    fun actualizarDatos(){
-
     }
 
     fun eliminarDato(id: Int){
