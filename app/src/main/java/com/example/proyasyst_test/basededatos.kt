@@ -38,6 +38,15 @@ class basededatos : AppCompatActivity() {
     var d22 = 0
     var d23 = 0
     var d24 = 0
+    var tipoAlarma = 0;
+    val fecha = findViewById<TextView>(R.id.fecha)
+    val txtMedicamento = findViewById<TextView>(R.id.txtMedicamento)
+    val txtIntervaloMedicamento = findViewById<TextView>(R.id.txtPeriodoDeTiempo)
+    val txteridoTratamiento = findViewById<TextView>(R.id.txtPeriodoDeTratamiento)
+    val txtId2 = findViewById<TextView>(R.id.txtId2)
+    val txtMedicamentoActualizar2 = findViewById<TextView>(R.id.txtMedicamentoActualizar2)
+    val btnEliminarregistro = findViewById<Button>(R.id.btnEliminarregistro)
+    val btnActualiarregistro = findViewById<Button>(R.id.btnActualiarregistro)
 
     private var id = 0
 
@@ -50,14 +59,7 @@ class basededatos : AppCompatActivity() {
         binding = ActivityBasededatosBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val fecha = findViewById<TextView>(R.id.fecha)
-        val txtMedicamento = findViewById<TextView>(R.id.txtMedicamento)
-        val txtIntervaloMedicamento = findViewById<TextView>(R.id.txtPeriodoDeTiempo)
-        val txteridoTratamiento = findViewById<TextView>(R.id.txtPeriodoDeTratamiento)
-        val txtId2 = findViewById<TextView>(R.id.txtId2)
-        val txtMedicamentoActualizar2 = findViewById<TextView>(R.id.txtMedicamentoActualizar2)
-        val btnEliminarregistro = findViewById<Button>(R.id.btnEliminarregistro)
-        val btnActualiarregistro = findViewById<Button>(R.id.btnActualiarregistro)
+
         val formato = "HH:mm:ss"
         val estado = 1
 
@@ -88,6 +90,8 @@ class basededatos : AppCompatActivity() {
                             txtIntervaloMedicamento.text.toString().toInt(),
                             txteridoTratamiento.text.toString().toInt(),
                             estado = 1,
+                            //colocar aqui el tipo de alarma
+                            tipoAlarma,
                             d1, d2, d3, d4, d5, d6, d7, d8, d9, d10, d11, d12, 1, d14, d15, d16,d17, d18, d19, d20, d21,
                             d22, d23, d24)
                     }else if(binding.txtPeriodoDeTiempo.toString().toInt() == 2){
@@ -97,6 +101,7 @@ class basededatos : AppCompatActivity() {
                             txtIntervaloMedicamento.text.toString().toInt(),
                             txteridoTratamiento.text.toString().toInt(),
                             estado = 1,
+                            tipoAlarma,
                             d1, d2, d3, d4, d5, d6, d7, d8, d9, d10, 1, d12, 0, d14, d15, d16,d17, d18, d19, d20, d21,
                             d22, 1, d24)
 
@@ -107,6 +112,7 @@ class basededatos : AppCompatActivity() {
                             txtIntervaloMedicamento.text.toString().toInt(),
                             txteridoTratamiento.text.toString().toInt(),
                             estado = 1,
+                            tipoAlarma,
                             d1, d2, d3, d4, d5, d6, d7, d8, 1, d10, d11,d12, d13, d14, d15, 1,d17, d18, d19, d20, d21,
                             1, d23, d24)
 
@@ -117,6 +123,7 @@ class basededatos : AppCompatActivity() {
                             txtIntervaloMedicamento.text.toString().toInt(),
                             txteridoTratamiento.text.toString().toInt(),
                             estado = 1,
+                            tipoAlarma,
                             d1, d2, d3, d4, d5, d6, d7, d8, 1, d10, d11,d12, 1, d14, d15, d14 ,1, d18, d19, d20, 1,
                             d22, d23, d24)
 
@@ -127,6 +134,7 @@ class basededatos : AppCompatActivity() {
                             txtIntervaloMedicamento.text.toString().toInt(),
                             txteridoTratamiento.text.toString().toInt(),
                             estado = 1,
+                            tipoAlarma,
                             d1, d2, d3, d4, d5, d6, d7, d8, 1, d10, d11,1, d13, d14, 1, d16,d17, 1, d19, d20, 1,
                             d22, d23, d24)                    }
                 }else {
@@ -167,7 +175,7 @@ class basededatos : AppCompatActivity() {
                     binding.datosConsulta.append(cursor.getString(3).toString() + " Horas, ")
                     binding.datosConsulta.append(cursor.getString(4).toString()+ " Dias \n")
                     binding.datosConsulta.append(cursor.getString(5).toString()+ " Estado \n" )
-                    //binding.datosConsulta.append(cursor.getString(6).toString()+ " Dosis \n")
+                    binding.datosConsulta.append(cursor.getString(6).toString()+ " tipo de Alarma    \n")
                     //binding.datosConsulta.append(cursor.getString(7).toString()+ " Dosis \n")
                     // binding.datosConsulta.append(cursor.getString(8).toString()+ " Dosis\n")
                     //binding.datosConsulta.append(cursor.getString(9).toString()+ " Dosis\n")
@@ -190,6 +198,7 @@ class basededatos : AppCompatActivity() {
 
     fun agregarDatosEstricto(){
         var i = 0
+        tipoAlarma = 1;
 
         if (binding.txtMedicamento.text.isNotBlank() &&
             binding.txtPeriodoDeTiempo.text.isNotBlank() &&
@@ -197,30 +206,246 @@ class basededatos : AppCompatActivity() {
 
             while (i <= 23) {
                 when (i) {
-                    0 -> { d1 = 1 }
-                    1 -> { d2 = 1 }
-                    2 -> { d3 = 1 }
-                    3 -> { d4 = 1 }
-                    4 -> { d5 = 1 }
-                    5 -> { d6 = 1 }
-                    6 -> { d7 = 1 }
-                    7 -> { d8 = 1 }
-                    8 -> { d9 = 1 }
-                    9 -> { d10 = 1 }
-                    10 -> { d11 = 1 }
-                    11 -> { d12 = 1 }
-                    12 -> { d13 = 1 }
-                    13 -> { d14 = 1 }
-                    14 -> { d15 = 1 }
-                    15 -> { d16 = 1 }
-                    16 -> { d17 = 1 }
-                    17 -> { d18 = 1 }
-                    18 -> { d19 = 1 }
-                    19 -> { d20 = 1 }
-                    20 -> { d21 = 1 }
-                    21 -> { d22 = 1 }
-                    22 -> { d23 = 1 }
-                    23 -> { d24 = 1 }
+                    0 -> { d1 = 1
+                        alarmasBdHelper.anadirDato2(
+                            fecha.text.toString(),
+                            txtMedicamento.text.toString(),
+                            txtIntervaloMedicamento.text.toString().toInt(),
+                            txteridoTratamiento.text.toString().toInt(),
+                            estado = 1,
+                            tipoAlarma,
+                            d1, d2, d3, d4, d5, d6, d7, d8, 1, d10, d11,d12, d13, d14, d15, 1,d17, d18, d19, d20, d21,
+                            0   , d23, 1)}
+                    1 -> { d2 = 1
+                        alarmasBdHelper.anadirDato2(
+                            fecha.text.toString(),
+                            txtMedicamento.text.toString(),
+                            txtIntervaloMedicamento.text.toString().toInt(),
+                            txteridoTratamiento.text.toString().toInt(),
+                            estado = 1,
+                            tipoAlarma,
+                            d1, d2, d3, d4, d5, d6, d7, d8, 1, d10, d11,d12, d13, d14, d15, 1,d17, d18, d19, d20, d21,
+                            1, d23, d24)}
+                    2 -> { d3 = 1
+                        alarmasBdHelper.anadirDato2(
+                            fecha.text.toString(),
+                            txtMedicamento.text.toString(),
+                            txtIntervaloMedicamento.text.toString().toInt(),
+                            txteridoTratamiento.text.toString().toInt(),
+                            estado = 1,
+                            tipoAlarma,
+                            d1, d2, d3, d4, d5, d6, d7, d8, 1, d10, d11,d12, d13, d14, d15, 1,d17, d18, d19, d20, d21,
+                            1, d23, d24)}
+                    3 -> { d4 = 1
+                        alarmasBdHelper.anadirDato2(
+                            fecha.text.toString(),
+                            txtMedicamento.text.toString(),
+                            txtIntervaloMedicamento.text.toString().toInt(),
+                            txteridoTratamiento.text.toString().toInt(),
+                            estado = 1,
+                            tipoAlarma,
+                            d1, d2, d3, d4, d5, d6, d7, d8, 1, d10, d11,d12, d13, d14, d15, 1,d17, d18, d19, d20, d21,
+                            1, d23, d24)}
+                    4 -> { d5 = 1
+                        alarmasBdHelper.anadirDato2(
+                            fecha.text.toString(),
+                            txtMedicamento.text.toString(),
+                            txtIntervaloMedicamento.text.toString().toInt(),
+                            txteridoTratamiento.text.toString().toInt(),
+                            estado = 1,
+                            tipoAlarma,
+                            d1, d2, d3, d4, d5, d6, d7, d8, 1, d10, d11,d12, d13, d14, d15, 1,d17, d18, d19, d20, d21,
+                            1, d23, d24)}
+                    5 -> { d6 = 1
+                        alarmasBdHelper.anadirDato2(
+                            fecha.text.toString(),
+                            txtMedicamento.text.toString(),
+                            txtIntervaloMedicamento.text.toString().toInt(),
+                            txteridoTratamiento.text.toString().toInt(),
+                            estado = 1,
+                            tipoAlarma,
+                            d1, d2, d3, d4, d5, d6, d7, d8, 1, d10, d11,d12, d13, d14, d15, 1,d17, d18, d19, d20, d21,
+                            1, d23, d24)}
+                    6 -> { d7 = 1
+                        alarmasBdHelper.anadirDato2(
+                            fecha.text.toString(),
+                            txtMedicamento.text.toString(),
+                            txtIntervaloMedicamento.text.toString().toInt(),
+                            txteridoTratamiento.text.toString().toInt(),
+                            estado = 1,
+                            tipoAlarma,
+                            d1, d2, d3, d4, d5, d6, d7, d8, 1, d10, d11,d12, d13, d14, d15, 1,d17, d18, d19, d20, d21,
+                            1, d23, d24)}
+                    7 -> { d8 = 1
+                        alarmasBdHelper.anadirDato2(
+                            fecha.text.toString(),
+                            txtMedicamento.text.toString(),
+                            txtIntervaloMedicamento.text.toString().toInt(),
+                            txteridoTratamiento.text.toString().toInt(),
+                            estado = 1,
+                            tipoAlarma,
+                            d1, d2, d3, d4, d5, d6, d7, d8, 1, d10, d11,d12, d13, d14, d15, 1,d17, d18, d19, d20, d21,
+                            1, d23, d24)}
+                    8 -> { d9 = 1
+                        alarmasBdHelper.anadirDato2(
+                            fecha.text.toString(),
+                            txtMedicamento.text.toString(),
+                            txtIntervaloMedicamento.text.toString().toInt(),
+                            txteridoTratamiento.text.toString().toInt(),
+                            estado = 1,
+                            tipoAlarma,
+                            d1, d2, d3, d4, d5, d6, d7, d8, 1, d10, d11,d12, d13, d14, d15, 1,d17, d18, d19, d20, d21,
+                            1, d23, d24)}
+                    9 -> { d10 = 1
+                        alarmasBdHelper.anadirDato2(
+                            fecha.text.toString(),
+                            txtMedicamento.text.toString(),
+                            txtIntervaloMedicamento.text.toString().toInt(),
+                            txteridoTratamiento.text.toString().toInt(),
+                            estado = 1,
+                            tipoAlarma,
+                            d1, d2, d3, d4, d5, d6, d7, d8, 1, d10, d11,d12, d13, d14, d15, 1,d17, d18, d19, d20, d21,
+                            1, d23, d24)}
+                    10 -> { d11 = 1
+                        alarmasBdHelper.anadirDato2(
+                            fecha.text.toString(),
+                            txtMedicamento.text.toString(),
+                            txtIntervaloMedicamento.text.toString().toInt(),
+                            txteridoTratamiento.text.toString().toInt(),
+                            estado = 1,
+                            tipoAlarma,
+                            d1, d2, d3, d4, d5, d6, d7, d8, 1, d10, d11,d12, d13, d14, d15, 1,d17, d18, d19, d20, d21,
+                            1, d23, d24)}
+                    11 -> { d12 = 1
+                        alarmasBdHelper.anadirDato2(
+                            fecha.text.toString(),
+                            txtMedicamento.text.toString(),
+                            txtIntervaloMedicamento.text.toString().toInt(),
+                            txteridoTratamiento.text.toString().toInt(),
+                            estado = 1,
+                            tipoAlarma,
+                            d1, d2, d3, d4, d5, d6, d7, d8, 1, d10, d11,d12, d13, d14, d15, 1,d17, d18, d19, d20, d21,
+                            1, d23, d24)}
+                    12 -> { d13 = 1
+                        alarmasBdHelper.anadirDato2(
+                            fecha.text.toString(),
+                            txtMedicamento.text.toString(),
+                            txtIntervaloMedicamento.text.toString().toInt(),
+                            txteridoTratamiento.text.toString().toInt(),
+                            estado = 1,
+                            tipoAlarma,
+                            d1, d2, d3, d4, d5, d6, d7, d8, 1, d10, d11,d12, d13, d14, d15, 1,d17, d18, d19, d20, d21,
+                            1, d23, d24)}
+                    13 -> { d14 = 1
+                        alarmasBdHelper.anadirDato2(
+                            fecha.text.toString(),
+                            txtMedicamento.text.toString(),
+                            txtIntervaloMedicamento.text.toString().toInt(),
+                            txteridoTratamiento.text.toString().toInt(),
+                            estado = 1,
+                            tipoAlarma,
+                            d1, d2, d3, d4, d5, d6, d7, d8, 1, d10, d11,d12, d13, d14, d15, 1,d17, d18, d19, d20, d21,
+                            1, d23, d24)}
+                    14 -> { d15 = 1
+                        alarmasBdHelper.anadirDato2(
+                            fecha.text.toString(),
+                            txtMedicamento.text.toString(),
+                            txtIntervaloMedicamento.text.toString().toInt(),
+                            txteridoTratamiento.text.toString().toInt(),
+                            estado = 1,
+                            tipoAlarma,
+                            d1, d2, d3, d4, d5, d6, d7, d8, 1, d10, d11,d12, d13, d14, d15, 1,d17, d18, d19, d20, d21,
+                            1, d23, d24)}
+                    15 -> { d16 = 1
+                        alarmasBdHelper.anadirDato2(
+                            fecha.text.toString(),
+                            txtMedicamento.text.toString(),
+                            txtIntervaloMedicamento.text.toString().toInt(),
+                            txteridoTratamiento.text.toString().toInt(),
+                            estado = 1,
+                            tipoAlarma,
+                            d1, d2, d3, d4, d5, d6, d7, d8, 1, d10, d11,d12, d13, d14, d15, 1,d17, d18, d19, d20, d21,
+                            1, d23, d24)}
+                    16 -> { d17 = 1
+                        alarmasBdHelper.anadirDato2(
+                            fecha.text.toString(),
+                            txtMedicamento.text.toString(),
+                            txtIntervaloMedicamento.text.toString().toInt(),
+                            txteridoTratamiento.text.toString().toInt(),
+                            estado = 1,
+                            tipoAlarma,
+                            d1, d2, d3, d4, d5, d6, d7, d8, 1, d10, d11,d12, d13, d14, d15, 1,d17, d18, d19, d20, d21,
+                            1, d23, d24)}
+                    17 -> { d18 = 1
+                        alarmasBdHelper.anadirDato2(
+                            fecha.text.toString(),
+                            txtMedicamento.text.toString(),
+                            txtIntervaloMedicamento.text.toString().toInt(),
+                            txteridoTratamiento.text.toString().toInt(),
+                            estado = 1,
+                            tipoAlarma,
+                            d1, d2, d3, d4, d5, d6, d7, d8, 1, d10, d11,d12, d13, d14, d15, 1,d17, d18, d19, d20, d21,
+                            1, d23, d24)}
+                    18 -> { d19 = 1
+                        alarmasBdHelper.anadirDato2(
+                            fecha.text.toString(),
+                            txtMedicamento.text.toString(),
+                            txtIntervaloMedicamento.text.toString().toInt(),
+                            txteridoTratamiento.text.toString().toInt(),
+                            estado = 1,
+                            tipoAlarma,
+                            d1, d2, d3, d4, d5, d6, d7, d8, 1, d10, d11,d12, d13, d14, d15, 1,d17, d18, d19, d20, d21,
+                            1, d23, d24)}
+                    19 -> { d20 = 1
+                        alarmasBdHelper.anadirDato2(
+                            fecha.text.toString(),
+                            txtMedicamento.text.toString(),
+                            txtIntervaloMedicamento.text.toString().toInt(),
+                            txteridoTratamiento.text.toString().toInt(),
+                            estado = 1,
+                            tipoAlarma,
+                            d1, d2, d3, d4, d5, d6, d7, d8, 1, d10, d11,d12, d13, d14, d15, 1,d17, d18, d19, d20, d21,
+                            1, d23, d24)}
+                    20 -> { d21 = 1
+                        alarmasBdHelper.anadirDato2(
+                            fecha.text.toString(),
+                            txtMedicamento.text.toString(),
+                            txtIntervaloMedicamento.text.toString().toInt(),
+                            txteridoTratamiento.text.toString().toInt(),
+                            estado = 1,
+                            tipoAlarma,
+                            d1, d2, d3, d4, d5, d6, d7, d8, 1, d10, d11,d12, d13, d14, d15, 1,d17, d18, d19, d20, d21,
+                            1, d23, d24)}
+                    21 -> { d22 = 1
+                        alarmasBdHelper.anadirDato2(
+                            fecha.text.toString(),
+                            txtMedicamento.text.toString(),
+                            txtIntervaloMedicamento.text.toString().toInt(),
+                            txteridoTratamiento.text.toString().toInt(),
+                            estado = 1,
+                            tipoAlarma,
+                            d1, d2, d3, d4, d5, d6, d7, d8, 1, d10, d11,d12, d13, d14, d15, 1,d17, d18, d19, d20, d21,
+                            1, d23, d24)}
+                    22 -> { d23 = 1
+                        alarmasBdHelper.anadirDato2(
+                            fecha.text.toString(),
+                            txtMedicamento.text.toString(),
+                            txtIntervaloMedicamento.text.toString().toInt(),
+                            txteridoTratamiento.text.toString().toInt(),
+                            estado = 1,
+                            tipoAlarma,
+                            d1, d2, d3, d4, d5, d6, d7, d8, 1, d10, d11,d12, d13, d14, d15, 1,d17, d18, d19, d20, d21,
+                            1, d23, d24)}
+                    23 -> { d24 = 1
+                        alarmasBdHelper.anadirDato2(
+                            fecha.text.toString(),
+                            txtMedicamento.text.toString(),
+                            txtIntervaloMedicamento.text.toString().toInt(),
+                            txteridoTratamiento.text.toString().toInt(),
+                            estado = 1,
+                            tipoAlarma,
+                            d1, d2, d3, d4, d5, d6, d7, d8, 1, d10, d11,d12, d13, d14, d15, 1,d17, d18, d19, d20, d21,
+                            1, d23, d24)}
                 }
 
                 i += binding.txtPeriodoDeTiempo.toString().toInt()
