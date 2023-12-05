@@ -61,14 +61,6 @@ class menu_principal : AppCompatActivity() {
             titulo.show()
         }
 
-        val btnExtra = findViewById<Button>(R.id.button2)
-        btnExtra.setOnClickListener {
-            startActivity(Intent(this, MainActivity::class.java))
-            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK)
-            finish();
-            overridePendingTransition(R.anim.fade_in,R.anim.fade_out)
-        }
-
     }
 
     private fun initRecycleView() {
