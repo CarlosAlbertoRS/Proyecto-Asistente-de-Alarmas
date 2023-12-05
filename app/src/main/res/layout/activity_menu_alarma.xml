@@ -21,7 +21,7 @@
         app:layout_constraintVertical_bias="0.0">
 
         <TextView
-            android:id="@+id/textView23"
+            android:id="@+id/fechaEstaticaEstricto"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
@@ -122,7 +122,7 @@
             android:orientation="horizontal">
 
             <EditText
-                android:id="@+id/editTextText4"
+                android:id="@+id/txtPeriodoTratamientoEstricto"
                 android:layout_width="74dp"
                 android:layout_height="36dp"
                 android:ems="10"

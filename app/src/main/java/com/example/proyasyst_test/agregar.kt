@@ -42,7 +42,7 @@ class agregar : AppCompatActivity() {
     var d18 = 0
     var d19 = 0
     var d20 = 0
-    var d21 = 1
+    var d21 = 0
     var d22 = 0
     var d23 = 0
     var d24 = 0
@@ -63,11 +63,6 @@ class agregar : AppCompatActivity() {
         val txteridoTratamiento = findViewById<EditText>(R.id.txtDias)
 
         val estado = 1
-        val d1 = 1
-        val d2 = 0
-        val d3 = 0
-        val d4 = 0
-        val d5 = 0
 
 
         val alarmasBdHelper = miSQLiteHelper(this)
@@ -115,79 +110,93 @@ class agregar : AppCompatActivity() {
 
             if (txtMedicamento.text.isNotBlank() &&
                 txtIntervaloMedicamento.text.isNotBlank() &&
-                txteridoTratamiento.text.isNotBlank())
+                txteridoTratamiento.text.isNotBlank()
+                && txtIntervaloMedicamento.text.toString().toInt() > 0
+                && txteridoTratamiento.text.toString().toInt() > 0)
             {
-                if(txtIntervaloMedicamento.toString().toInt() <= 5 && txtIntervaloMedicamento.toString().toInt() > 0){
-                    if(txtIntervaloMedicamento.toString().toInt() == 1){
+                if(txtIntervaloMedicamento.text.toString().toInt() <= 5 && txtIntervaloMedicamento.text.toString().toInt() > 0){
+                    if(txtIntervaloMedicamento.text.toString().toInt() == 1){
                         alarmasBdHelper.anadirDato2(
                             fecha.text.toString(),
                             txtMedicamento.text.toString(),
                             txtIntervaloMedicamento.text.toString().toInt(),
                             txteridoTratamiento.text.toString().toInt(),
-                            estado = 1,
+                            1,
                             //colocar aqui el tipo de alarma
-                            tipoAlarma,
+                             0,
                             d1, d2, d3, d4, d5, d6, d7, d8, d9, d10, d11, d12, 1, d14, d15, d16,d17, d18, d19, d20, d21,
                             d22, d23, d24)
-                    }else if(txtIntervaloMedicamento.toString().toInt() == 2){
+                        //Limpia todos los campos
+                        txtMedicamento.text.clear()
+                        txtIntervaloMedicamento.text.clear()
+                        txteridoTratamiento.text.clear()
+                        Toast.makeText(this, "El dato ah sido guardado", Toast.LENGTH_SHORT).show()
+                    }else if(txtIntervaloMedicamento.text.toString().toInt() == 2){
                         alarmasBdHelper.anadirDato2(
                             fecha.text.toString(),
                             txtMedicamento.text.toString(),
                             txtIntervaloMedicamento.text.toString().toInt(),
                             txteridoTratamiento.text.toString().toInt(),
-                            estado = 1,
-                            tipoAlarma,
+                            1,
+                            0,
                             d1, d2, d3, d4, d5, d6, d7, d8, d9, d10, 1, d12, 0, d14, d15, d16,d17, d18, d19, d20, d21,
                             d22, 1, d24)
+                        //Limpia todos los campos
+                        txtMedicamento.text.clear()
+                        txtIntervaloMedicamento.text.clear()
+                        txteridoTratamiento.text.clear()
+                        Toast.makeText(this, "El dato ah sido guardado", Toast.LENGTH_SHORT).show()
 
-                    }else if(txtIntervaloMedicamento.toString().toInt() == 3){
+                    }else if(txtIntervaloMedicamento.text.toString().toInt() == 3){
                         alarmasBdHelper.anadirDato2(
                             fecha.text.toString(),
                             txtMedicamento.text.toString(),
                             txtIntervaloMedicamento.text.toString().toInt(),
                             txteridoTratamiento.text.toString().toInt(),
-                            estado = 1,
-                            tipoAlarma,
+                            1,
+                            0,
                             d1, d2, d3, d4, d5, d6, d7, d8, 1, d10, d11,d12, d13, d14, d15, 1,d17, d18, d19, d20, d21,
                             1, d23, d24)
+                        //Limpia todos los campos
+                        txtMedicamento.text.clear()
+                        txtIntervaloMedicamento.text.clear()
+                        txteridoTratamiento.text.clear()
+                        Toast.makeText(this, "El dato ah sido guardado", Toast.LENGTH_SHORT).show()
 
-                    }else if(txtIntervaloMedicamento.toString().toInt() == 4){
+                    }else if(txtIntervaloMedicamento.text.toString().toInt() == 4){
                         alarmasBdHelper.anadirDato2(
                             fecha.text.toString(),
                             txtMedicamento.text.toString(),
                             txtIntervaloMedicamento.text.toString().toInt(),
                             txteridoTratamiento.text.toString().toInt(),
-                            estado = 1,
-                            tipoAlarma,
+                            1,
+                            0,
                             d1, d2, d3, d4, d5, d6, d7, d8, 1, d10, d11,d12, 1, d14, d15, d14 ,1, d18, d19, d20, 1,
                             d22, d23, d24)
+                        //Limpia todos los campos
+                        txtMedicamento.text.clear()
+                        txtIntervaloMedicamento.text.clear()
+                        txteridoTratamiento.text.clear()
+                        Toast.makeText(this, "El dato ah sido guardado", Toast.LENGTH_SHORT).show()
 
-                    }else if(txtIntervaloMedicamento.toString().toInt() == 5){
+                    }else if(txtIntervaloMedicamento.text.toString().toInt() == 5){
                         alarmasBdHelper.anadirDato2(
                             fecha.text.toString(),
                             txtMedicamento.text.toString(),
                             txtIntervaloMedicamento.text.toString().toInt(),
                             txteridoTratamiento.text.toString().toInt(),
-                            estado = 1,
-                            tipoAlarma,
+                            1,
+                            0,
                             d1, d2, d3, d4, d5, d6, d7, d8, 1, d10, d11,1, d13, d14, 1, d16,d17, 1, d19, d20, 1,
-                            d22, d23, d24)                    }
+                            d22, d23, d24)
+                        //Limpia todos los campos
+                        txtMedicamento.text.clear()
+                        txtIntervaloMedicamento.text.clear()
+                        txteridoTratamiento.text.clear()
+                        Toast.makeText(this, "El dato ah sido guardado", Toast.LENGTH_SHORT).show()}
                 }else {
                     Toast.makeText(this, "El numero maximo tiene que 5 ",Toast.LENGTH_SHORT).show()
                 }
-
-                //binding.fecha.text.toString(),
-                //binding.txtMedicamento.text.toString(),
-                //binding.txtPeriodoDeTiempo.text.toString().toInt(),
-                //binding.txtPeriodoDeTratamiento.text.toString().toInt(),
-                //binding.switchEstad.text.toString().toInt())
-
-
-                //Limpia todos los campos
-                txtMedicamento.text.clear()
-                txtIntervaloMedicamento.text.clear()
-                txteridoTratamiento.text.clear()
-                Toast.makeText(this, "El dato ah sido guardado", Toast.LENGTH_SHORT).show()
             }else
             {
                 Toast.makeText(this, "Los campos estan vacios, por favor rellenelos", Toast.LENGTH_SHORT).show()

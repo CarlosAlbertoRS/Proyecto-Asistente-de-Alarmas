@@ -35,7 +35,7 @@ class basededatos : AppCompatActivity() {
     var d18 = 0
     var d19 = 0
     var d20 = 0
-    var d21 = 1
+    var d21 = 0
     var d22 = 0
     var d23 = 0
     var d24 = 0
@@ -62,7 +62,7 @@ class basededatos : AppCompatActivity() {
 
 
 
-        val alarmasBdHelper = miSQLiteHelper(this)
+         alarmasBdHelper = miSQLiteHelper(this)
         val calendar = Calendar.getInstance()
         val fechaActual = calendar.time
         val formatoFecha = SimpleDateFormat("dd/MM/yyyy", Locale.getDefault())
@@ -159,7 +159,7 @@ class basededatos : AppCompatActivity() {
             binding.datosConsulta.text = ""
             val db : SQLiteDatabase = alarmasBdHelper.readableDatabase
             val cursor =  db.rawQuery(
-                "SELECT * FROM alarma",
+                "SELECT * FROM alarmaEstricto",
                 null)
 
             if (cursor.moveToFirst()){
@@ -167,10 +167,10 @@ class basededatos : AppCompatActivity() {
                     binding.datosConsulta.append(cursor.getString(0).toString() + ": ")
                     binding.datosConsulta.append(cursor.getString(1).toString()+ ", Fecha: ")
                     binding.datosConsulta.append(cursor.getString(2).toString() + " , Medicamento: ")
-                    binding.datosConsulta.append(cursor.getString(3).toString() + " Horas, ")
+                    binding.datosConsulta.append(cursor.getString(3).toString() + " dosis, ")
                     binding.datosConsulta.append(cursor.getString(4).toString()+ " Dias \n")
                     binding.datosConsulta.append(cursor.getString(5).toString()+ " Estado \n" )
-                    //binding.datosConsulta.append(cursor.getString(6).toString()+ " Dosis \n")
+                    binding.datosConsulta.append(cursor.getString(6).toString()+ " Tipo alarma \n")
                     //binding.datosConsulta.append(cursor.getString(7).toString()+ " Dosis \n")
                     // binding.datosConsulta.append(cursor.getString(8).toString()+ " Dosis\n")
                     //binding.datosConsulta.append(cursor.getString(9).toString()+ " Dosis\n")
@@ -184,7 +184,7 @@ class basededatos : AppCompatActivity() {
         }
 
         btnActualiarregistro.setOnClickListener {
-            alarmasBdHelper.actualizar(txtId2.text.toString().toInt(),txtMedicamentoActualizar2.text.toString())
+          //  alarmasBdHelper.actualizar(txtId2.text.toString().toInt(),txtMedicamentoActualizar2.text.toString())
         }
 
 
