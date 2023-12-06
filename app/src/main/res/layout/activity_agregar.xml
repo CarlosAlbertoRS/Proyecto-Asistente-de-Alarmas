@@ -92,7 +92,7 @@
                 android:layout_height="36dp"
                 android:ems="10"
                 android:gravity="center_horizontal"
-                android:inputType="text"
+                android:inputType="number"
                 android:textSize="12sp"
                 tools:ignore="LabelFor,MissingConstraints,SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
@@ -125,7 +125,7 @@
                 android:layout_height="36dp"
                 android:ems="10"
                 android:gravity="center_horizontal"
-                android:inputType="text"
+                android:inputType="number"
                 android:textSize="12sp"
                 tools:ignore="LabelFor,MissingConstraints,SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 

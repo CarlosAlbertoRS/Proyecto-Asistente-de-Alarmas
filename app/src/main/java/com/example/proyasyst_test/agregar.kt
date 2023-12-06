@@ -21,12 +21,35 @@ import android.database.sqlite.SQLiteDatabase
 
 class agregar : AppCompatActivity() {
     private lateinit var binding: ActivityAgregarBinding
+    private lateinit var alarmasBdHelper: miSQLiteHelper
+    var d1 = 0
+    var d2 = 0
+    var d3 = 0
+    var d4 = 0
+    var d5 = 0
+    var d6 = 0
+    var d7 = 0
+    var d8 = 0
+    var d9 = 0
+    var d10 = 0
+    var d11 = 0
+    var d12 = 0
+    var d13 = 0
+    var d14 = 0
+    var d15 = 0
+    var d16 = 0
+    var d17 = 0
+    var d18 = 0
+    var d19 = 0
+    var d20 = 0
+    var d21 = 0
+    var d22 = 0
+    var d23 = 0
+    var d24 = 0
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_agregar)
-
-        ///////////////////////////////////////////////////////////////////////////////////////////
 
         binding = ActivityAgregarBinding.inflate(layoutInflater)
         setContentView(binding.root)
@@ -35,15 +58,6 @@ class agregar : AppCompatActivity() {
         val txtMedicamento = findViewById<EditText>(R.id.txtMedic)
         val txtIntervaloMedicamento = findViewById<EditText>(R.id.txtHoras)
         val txteridoTratamiento = findViewById<EditText>(R.id.txtDias)
-
-        val estado = 1
-        val d1 = 1
-        val d2 = 0
-        val d3 = 0
-        val d4 = 0
-        val d5 = 0
-
-
         val alarmasBdHelper = miSQLiteHelper(this)
         val calendar = Calendar.getInstance()
         val fechaActual = calendar.time
@@ -53,8 +67,6 @@ class agregar : AppCompatActivity() {
         fecha.text = fechaFormateada
         fecha.text = fecha.text.toString()
 
-        /////////////////////////////////////////////////////////////////////////////////////////////
-
         val btnCancelar = findViewById<ImageButton>(R.id.btnCancelar)
         btnCancelar.setOnClickListener {
             startActivity(Intent(this, menu_principal::class.java))
@@ -63,7 +75,7 @@ class agregar : AppCompatActivity() {
         }
 
         val btnSwich = findViewById<Switch>(R.id.switchAgregar)
-        var modoEstrictoActivado = false // Variable para mantener el estado del modo estricto
+        var modoEstrictoActivado = false
         btnSwich.setOnClickListener {
             val alerta = AlertDialog.Builder(this)
 
@@ -77,7 +89,7 @@ class agregar : AppCompatActivity() {
                 }
                 .setNegativeButton("Cancelar") { dialog, which ->
                     dialog.cancel()
-                    btnSwich.isChecked = modoEstrictoActivado // Restablecer el estado del Switch
+                    btnSwich.isChecked = modoEstrictoActivado
                 }
 
             val titulo = alerta.create()
@@ -87,57 +99,94 @@ class agregar : AppCompatActivity() {
 
         binding.btnAgregar.setOnClickListener {
 
-            if (binding.txtMedic.text.isNotBlank() &&
-                binding.txtHoras.text.isNotBlank() &&
-                binding.txtDias.text.isNotBlank())
+            if (txtMedicamento.text.isNotBlank() &&
+                txtIntervaloMedicamento.text.isNotBlank() &&
+                txteridoTratamiento.text.isNotBlank()
+                && txtIntervaloMedicamento.text.toString().toInt() > 0
+                && txteridoTratamiento.text.toString().toInt() > 0)
             {
+                if(txtIntervaloMedicamento.text.toString().toInt() <= 5 && txtIntervaloMedicamento.text.toString().toInt() > 0){
+                    if(txtIntervaloMedicamento.text.toString().toInt() == 1){
+                        alarmasBdHelper.anadirDato2(
+                            fecha.text.toString(),
+                            txtMedicamento.text.toString(),
+                            txtIntervaloMedicamento.text.toString().toInt(),
+                            txteridoTratamiento.text.toString().toInt(),
+                            1,
+                             0,
+                            d1, d2, d3, d4, d5, d6, d7, d8, d9, d10, d11, d12, 1, d14, d15, d16,d17, d18, d19, d20, d21,
+                            d22, d23, d24)
+                        //Limpia todos los campos
+                        txtMedicamento.text.clear()
+                        txtIntervaloMedicamento.text.clear()
+                        txteridoTratamiento.text.clear()
+                        Toast.makeText(this, "El dato ah sido guardado", Toast.LENGTH_SHORT).show()
+                    }else if(txtIntervaloMedicamento.text.toString().toInt() == 2){
+                        alarmasBdHelper.anadirDato2(
+                            fecha.text.toString(),
+                            txtMedicamento.text.toString(),
+                            txtIntervaloMedicamento.text.toString().toInt(),
+                            txteridoTratamiento.text.toString().toInt(),
+                            1,
+                            0,
+                            d1, d2, d3, d4, d5, d6, d7, d8, d9, d10, 1, d12, 0, d14, d15, d16,d17, d18, d19, d20, d21,
+                            d22, 1, d24)
+                        txtMedicamento.text.clear()
+                        txtIntervaloMedicamento.text.clear()
+                        txteridoTratamiento.text.clear()
+                        Toast.makeText(this, "El dato ah sido guardado", Toast.LENGTH_SHORT).show()
 
-                if (binding.switchAgregar.isChecked == true){
-                    alarmasBdHelper.anadirDato(
-                        fecha.text.toString(),
-                        txtMedicamento.text.toString(),
-                        txtIntervaloMedicamento.text.toString().toInt(),
-                        txteridoTratamiento.text.toString().toInt(),
-                        estado = 1,
-                        d1, d2, d3, d4, d5)
-                }else
-                {
-                    alarmasBdHelper.anadirDato(
-                        fecha.text.toString(),
-                        txtMedicamento.text.toString(),
-                        txtIntervaloMedicamento.text.toString().toInt(),
-                        txteridoTratamiento.text.toString().toInt(),
-                        estado = 0,
-                        d1, d2, d3, d4, d5)
+                    }else if(txtIntervaloMedicamento.text.toString().toInt() == 3){
+                        alarmasBdHelper.anadirDato2(
+                            fecha.text.toString(),
+                            txtMedicamento.text.toString(),
+                            txtIntervaloMedicamento.text.toString().toInt(),
+                            txteridoTratamiento.text.toString().toInt(),
+                            1,
+                            0,
+                            d1, d2, d3, d4, d5, d6, d7, d8, 1, d10, d11,d12, d13, d14, d15, 1,d17, d18, d19, d20, d21,
+                            1, d23, d24)
+                        txtMedicamento.text.clear()
+                        txtIntervaloMedicamento.text.clear()
+                        txteridoTratamiento.text.clear()
+                        Toast.makeText(this, "El dato ah sido guardado", Toast.LENGTH_SHORT).show()
+
+                    }else if(txtIntervaloMedicamento.text.toString().toInt() == 4){
+                        alarmasBdHelper.anadirDato2(
+                            fecha.text.toString(),
+                            txtMedicamento.text.toString(),
+                            txtIntervaloMedicamento.text.toString().toInt(),
+                            txteridoTratamiento.text.toString().toInt(),
+                            1,
+                            0,
+                            d1, d2, d3, d4, d5, d6, d7, d8, 1, d10, d11,d12, 1, d14, d15, d14 ,1, d18, d19, d20, 1,
+                            d22, d23, d24)
+                        txtMedicamento.text.clear()
+                        txtIntervaloMedicamento.text.clear()
+                        txteridoTratamiento.text.clear()
+                        Toast.makeText(this, "El dato ah sido guardado", Toast.LENGTH_SHORT).show()
+
+                    }else if(txtIntervaloMedicamento.text.toString().toInt() == 5){
+                        alarmasBdHelper.anadirDato2(
+                            fecha.text.toString(),
+                            txtMedicamento.text.toString(),
+                            txtIntervaloMedicamento.text.toString().toInt(),
+                            txteridoTratamiento.text.toString().toInt(),
+                            1,
+                            0,
+                            d1, d2, d3, d4, d5, d6, d7, d8, 1, d10, d11,1, d13, d14, 1, d16,d17, 1, d19, d20, 1,
+                            d22, d23, d24)
+                        txtMedicamento.text.clear()
+                        txtIntervaloMedicamento.text.clear()
+                        txteridoTratamiento.text.clear()
+                        Toast.makeText(this, "El dato ah sido guardado", Toast.LENGTH_SHORT).show()}
+                }else {
+                    Toast.makeText(this, "El numero maximo tiene que 5 ",Toast.LENGTH_SHORT).show()
                 }
-
-                //Limpia todos los campos
-                binding.txtMedic.text.clear()
-                binding.txtHoras.text.clear()
-                binding.txtDias.text.clear()
-                Toast.makeText(this, "El dato ah sido guardado", Toast.LENGTH_SHORT).show()
             }else
             {
                 Toast.makeText(this, "Los campos estan vacios, por favor rellenelos", Toast.LENGTH_SHORT).show()
             }
-
-
-            //binding.datosConsulta.text = ""
-            /*val db : SQLiteDatabase = alarmasBdHelper.readableDatabase
-            val cursor =  db.rawQuery(
-                "SELECT * FROM alarma",
-                null)
-
-            if (cursor.moveToFirst()){
-                do {
-                    binding.datosConsulta.append(cursor.getString(0).toString() + ": ")
-                    binding.datosConsulta.append(cursor.getString(1).toString()+ ", Fecha: ")
-                    binding.datosConsulta.append(cursor.getString(2).toString() + " , Medicamento: ")
-                    binding.datosConsulta.append(cursor.getString(3).toString() + " Horas, ")
-                    binding.datosConsulta.append(cursor.getString(4).toString()+ " Dias \n")
-                    binding.datosConsulta.append(cursor.getString(5).toString()+ " Estado \n" )
-                }while (cursor.moveToNext())
-            }*/
         }
 
 
