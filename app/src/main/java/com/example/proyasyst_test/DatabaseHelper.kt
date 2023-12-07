@@ -31,23 +31,19 @@ class DatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME
         // Puedes implementar la lógica de actualización aquí si es necesario
     }
 
-    fun anadirDato( fecha: String, medicamento: String, periodoHora: Int, periodoTratamiento: Int, estado: Int, d1: Int
-                    , d2: Int, d3: Int, d4: Int, d5: Int) {
+    fun anadirDato( fecha: String, medicamento: String, periodoHora: Int, periodoTratamiento: Int, estado: Int
+                    ) {
         val datos = ContentValues()
         datos.put("fecha", fecha)
         datos.put("nombre", medicamento)
         datos.put("frecuencia", periodoHora)
         datos.put("periodo_total", periodoTratamiento)
         datos.put("estado", estado)
-        datos.put("d1", d1)
-        datos.put("d2", d2)
-        datos.put("d3", d3)
-        datos.put("d4", d4)
-        datos.put("d5", d5)
 
 
         val db = this.writableDatabase
-        db.insert("medicamentos",null, datos)
+        val nuevoReg = db?.insert("medicamentos",null, datos)
+
         db.close()
     }
 

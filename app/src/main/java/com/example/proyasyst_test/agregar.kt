@@ -95,8 +95,7 @@ class agregar : AppCompatActivity() {
                         txtMedicamento.text.toString(),
                         txtIntervaloMedicamento.text.toString().toInt(),
                         txteridoTratamiento.text.toString().toInt(),
-                        estado = 0,
-                        d1, d2, d3, d4, d5)
+                        0)
 
                 //Limpia todos los campos
                 binding.txtMedic.text.clear()

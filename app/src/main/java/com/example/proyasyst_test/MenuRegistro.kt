@@ -49,7 +49,7 @@ class MenuRegistro : AppCompatActivity() {
     private fun actualizarVista() {
         // Realiza las operaciones de cambio de datos en la base de datos
         // Por ejemplo:
-        // databaseHelper.anadirDato("10/11/2023", "Nuevo Medicamento", 8, 30, 1, 0, 0, 0, 0, 0)
+        // databaseHelper.anadirDato("10/-11/2023", "Nuevo Medicamento", 8, 30, 1, 0, 0, 0, 0, 0)
 
         // Después de cambiar los datos, obtén los nuevos datos y notifica al adaptador
         val nuevosMedicamentos = databaseHelper.obtenerMedicamentos()
