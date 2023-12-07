@@ -43,7 +43,6 @@ class DatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME
 
         val db = this.writableDatabase
         val nuevoReg = db?.insert("medicamentos",null, datos)
-
         db.close()
     }
 
@@ -58,13 +57,14 @@ class DatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME
         if (cursor.moveToFirst()) {
             do {
                 // Asegúrate de ajustar los nombres de las columnas según tu esquema de base de datos
+                val fecha = cursor.getString(cursor.getColumnIndex(COLUMN_FECHA))
                 val nombre = cursor.getString(cursor.getColumnIndex(COLUMN_NOMBRE))
                 val frecuencia = cursor.getString(cursor.getColumnIndex(COLUMN_FRECUENCIA))
                 val periodoTotal = cursor.getString(cursor.getColumnIndex(COLUMN_PERIODO_TOTAL))
                 val estado = cursor.getString(cursor.getColumnIndex(COLUMN_ESTADO))
 
                 // Crea un objeto Medicamento y agrégalo a la lista
-                val medicamento = variables("05/12/2023", nombre, frecuencia, periodoTotal, estado)
+                val medicamento = variables(fecha, nombre, frecuencia, periodoTotal, "Activo")
                 medicamentos.add(medicamento)
             } while (cursor.moveToNext())
         }

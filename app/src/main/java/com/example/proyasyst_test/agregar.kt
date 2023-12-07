@@ -33,13 +33,6 @@ class agregar : AppCompatActivity() {
         val txtIntervaloMedicamento = findViewById<EditText>(R.id.txtHoras)
         val txteridoTratamiento = findViewById<EditText>(R.id.txtDias)
 
-        val estado = 1
-        val d1 = 1
-        val d2 = 0
-        val d3 = 0
-        val d4 = 0
-        val d5 = 0
-
 
         val alarmasBdHelper = DatabaseHelper(this)
         val calendar = Calendar.getInstance()
